@@ -498,6 +498,9 @@ body {
   body.no-scroll {
     overflow: hidden; }
 
+h1, h2, h3, h4 {
+  font-family: "Montserrat-Bold", Arial, sans-serif; }
+
 a {
   color: #484848;
   text-decoration: none; }
@@ -1166,7 +1169,8 @@ a {
 
 .slider {
   height: 283px;
-  overflow: hidden; }
+  overflow: hidden;
+  position: relative; }
   .slider__img {
     display: -webkit-box;
     display: flex;
@@ -1178,6 +1182,19 @@ a {
     .slider__img img {
       max-width: inherit;
       height: 100%;
-      /* min-width: 100%; */
+      min-width: 100%;
       -o-object-fit: cover;
          object-fit: cover; }
+  .slider__content {
+    position: absolute;
+    z-index: 11;
+    color: #FFF;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    text-align: center; }
+    .slider__content h1 {
+      font-size: 1.4em;
+      line-height: 1.2;
+      margin-bottom: 6px; }
