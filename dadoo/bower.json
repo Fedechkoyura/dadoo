@@ -1,0 +1,21 @@
+{
+  "name": "politika",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "Fedechko Yura <fedechkoyura@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "normalize.css": "*",
+    "jquery": "2.*"
+  }
+}

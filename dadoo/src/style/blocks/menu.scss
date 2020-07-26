@@ -1,0 +1,103 @@
+.menu {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    &__blog {
+        ul {
+            display: none;
+        }
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+    li {
+        a {
+            word-break: break-all;
+            display: flex;
+            align-items: center;
+            height: 55px;
+            padding-right: 45px;
+            border-bottom: 1px solid #F1F1F1;
+            letter-spacing: 1.32px;
+            color: #666666;
+            position: relative;
+            transition: all .3s linear;
+            &.menu__has-child {
+                &::after {
+                    content: "\e909";
+                    font-family: 'icomoon' !important;
+                    speak: never;
+                    font-style: normal;
+                    font-weight: normal;
+                    font-variant: normal;
+                    text-transform: none;
+                    line-height: 1;
+
+                    /* Better Font Rendering =========== */
+                    -webkit-font-smoothing: antialiased;
+                    -moz-osx-font-smoothing: grayscale;
+                    position: absolute;
+                    right: 36px;
+                    top: 2px;
+                    bottom: 0;
+                    margin: auto;
+                    width: 4px;
+                    height: 7px;
+                    font-size: 9px;
+                    color: #666;
+                    transition: all .3s linear;
+                }
+            }
+        }
+    }
+    >li {
+        >a {
+            padding-left: 25px;
+            font-size: 1.1em;
+            font-family: $montB;
+            text-transform: uppercase;
+            &.active {
+                background: $red;
+                color: #FFF;
+                &::after {
+                    color: #FFF;
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+        ul {
+            display: none;
+        }
+        >ul {
+            li a {
+                background: #F3F3F3;
+                border-bottom-color: #DADADA;
+            }
+            >li {
+                >a {
+                    padding-left: 38px;
+                    font-family: $montS;
+                    font-size: 1.1em;
+                    text-transform: uppercase;
+                    &.active {
+                        color: $red;
+                        &::after {
+                            color: $red;
+                            transform: rotate(-90deg);
+                        }
+                    }
+                }
+                ul {
+                    li {
+                        a {
+                            padding-left: 49px;
+                            font-size: 1.2em;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

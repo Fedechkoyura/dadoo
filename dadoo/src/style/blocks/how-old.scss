@@ -1,0 +1,61 @@
+.how-old {
+    text-align: center;
+    .header__nav-lang,
+    .header__nav-close {
+        display: none;
+    }
+    .popup {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding-bottom: 31px;
+    }
+    &__agree {
+        margin-top: auto;
+        font-size: 0.9em;
+        color: #AFAFAF;
+        a {
+            color: #AFAFAF;
+            text-decoration: underline;
+        }
+    }
+    &__desc {
+        margin-top: auto;
+        display: block;
+        font-size: 1.1em;
+        margin-bottom: 16px;
+    }
+    &__title {
+        width: 190px;
+        font-size: 1.1em;
+        font-family: $montB;
+        margin-bottom: 94px;
+    }
+    &__btns {
+        display: flex;
+        width: 100%;
+        padding: 0 35px;
+    }
+    &__yes,
+    &__back {
+    	color: #FFF;
+        margin-right: 19px;
+        background: $red;
+    }
+    &__back{
+    	margin-right: 0;
+    }
+    &__no {
+        border-color: #FFCFCF;
+        color: $red;
+    }
+    &__sorry{
+    	.how-old__btns{
+    		margin-bottom: auto;
+    	}
+    	.how-old__desc{
+    		width: 250px;
+    	}
+    }
+}
