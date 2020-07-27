@@ -1,0 +1,9 @@
+.recommended{
+	margin-bottom: 23px;
+	&__list{
+		margin: 0 4px 4px;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(150px, 0.5fr));
+		grid-gap: 3px 3px;
+	}
+}

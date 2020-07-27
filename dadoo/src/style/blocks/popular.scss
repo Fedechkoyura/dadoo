@@ -1,0 +1,17 @@
+.popular{
+	margin-bottom: 22px;
+	overflow: hidden;
+	&__title{
+		font-size: 1.2em;
+		font-family: $montS;
+		text-transform: uppercase;
+		text-align: center;
+		margin: 20px;
+	}
+	&__arrow{
+		display: none;
+	}
+	&__list{
+		width: 100%;
+	}
+}

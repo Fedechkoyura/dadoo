@@ -38,6 +38,13 @@ $(document).ready(function() {
         }
     };
 
+    // DEMO
+    $('.product__buy').click(function(event) {
+        $(this).hide();
+        $(this).siblings('.product__number').show();
+    });
+    // 
+
     // MENU
     function openClosePopup() {
         if (windowWidth < 992) {
@@ -101,7 +108,7 @@ $(document).ready(function() {
     // MENU -- END
 
     // INPUT PLUS $ MINUS
-    $('.number__minus').click(function() {
+    $('.product__number-minus').click(function() {
         var $input = $(this).parent().find('input');
         var count = parseInt($input.val()) - 1;
         count = count < 1 ? 1 : count;
@@ -109,7 +116,7 @@ $(document).ready(function() {
         $input.change();
         return false;
     });
-    $('.number__plus').click(function() {
+    $('.product__number-plus').click(function() {
         var $input = $(this).parent().find('input');
         $input.val(parseInt($input.val()) + 1);
         $input.change();

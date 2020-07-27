@@ -2,6 +2,7 @@
 	height: 283px;
 	overflow: hidden;
 	position: relative;
+	margin-bottom: 7px;
 	&__img{
 		display: flex;
 		justify-content: center;
@@ -16,16 +17,24 @@
 	}
 	&__content{
 		position: absolute;
-		z-index: 11;
+		z-index: 2;
 		color: #FFF;
 		top: 50%;
 		left: 50%;
 		transform: translate(-50%, -50%);
 		text-align: center;
+		width: 100%;
+		max-width: 400px;
 		h1{
 			font-size: 1.4em;
 			line-height: 1.2;
 			margin-bottom: 6px;
+			text-transform: uppercase;
+		}
+		p{
+			margin: 0;
+			font-family: $robotoL;
+			font-size: 1.2em;
 		}
 	}
 }

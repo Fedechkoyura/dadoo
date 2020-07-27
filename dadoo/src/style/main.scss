@@ -3,6 +3,7 @@
 @import "variables.scss";
 @import "mixins.scss";
 @import "font.scss";
+@import "swiper.scss";
 
 @import "blocks/global.scss";
 @import "blocks/header.scss";
@@ -10,3 +11,7 @@
 @import "blocks/login.scss";
 @import "blocks/how-old.scss";
 @import "blocks/slider.scss";
+@import "blocks/product.scss";
+@import "blocks/recommended.scss";
+@import "blocks/article-block.scss";
+@import "blocks/popular.scss";
