@@ -7,3 +7,15 @@
 		grid-gap: 3px 3px;
 	}
 }
+@media (min-width:1024px){
+	.recommended{
+		margin-bottom: 6px;
+		display: flex;
+		align-items: stretch;
+		&__list{
+			margin: 0;
+			width: 90%;
+			flex-grow: 1;
+		}
+	}
+}

@@ -82,8 +82,8 @@
                     </div>
                     <div class="product product--recommended">
                         <div class="product__wish">
-                            <i class="icon-heart"></i>
-                            <i class="icon-heart-full hidden"></i>
+                            <i class="icon-heart hidden"></i>
+                            <i class="icon-heart-full"></i>
                         </div>
                         <div class="product__sticker-list">
                             <div class="product__sticker-item product__sticker-item--gift">
@@ -224,6 +224,12 @@
                         <div class="swiper-slide product product--popular">
                             //= template/product.html
                         </div>
+                        <div class="swiper-slide product product--popular">
+                            //= template/product.html
+                        </div>
+                        <div class="swiper-slide product product--popular">
+                            //= template/product.html
+                        </div>
                     </div>
                 </div>
                 <div class="popular__arrow">
@@ -233,7 +239,7 @@
             </div>
             <div class="article-block article-block--right">
                 <a href="#" class="article-block__content">
-                    <div class="article-block__img">
+                    <div class="img-bg article-block__img">
                         <img src="img/demo/blog3.jpg" alt="">
                     </div>
                     <span class="article-block__text">
@@ -271,6 +277,12 @@
                         <div class="swiper-slide product product--popular">
                             //= template/product.html
                         </div>
+                        <div class="swiper-slide product product--popular">
+                            //= template/product.html
+                        </div>
+                        <div class="swiper-slide product product--popular">
+                            //= template/product.html
+                        </div>
                     </div>
                 </div>
                 <div class="popular__arrow">
@@ -278,9 +290,9 @@
                     <div class="popular__arrow--next icon-arrow"></div>
                 </div>
             </div>
-            <div class="article-block">
+            <div class="article-block article-block--last">
                 <a href="#" class="article-block__content">
-                    <div class="article-block__img">
+                    <div class="img-bg article-block__img">
                         <img src="img/demo/blog2.jpg" alt="">
                     </div>
                     <span class="article-block__text">
@@ -317,6 +329,12 @@
             prevEl: '.popular--drink .popular__arrow--prev',
             nextEl: '.popular--drink .popular__arrow--next',
         },
+        breakpoints: {
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 4
+            },
+        }
     })
     var mySwiper = new Swiper('.popular--eat .popular__list', {
         slidesPerView: 'auto',
@@ -326,6 +344,12 @@
             prevEl: '.popular--eat .popular__arrow--prev',
             nextEl: '.popular--eat .popular__arrow--next',
         },
+        breakpoints: {
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 4
+            },
+        }
     })
     </script>
 </body>

@@ -1,390 +1,416 @@
 <header class="header">
-    <div class="container">
-        <div class="header__top">
-            <div data-link="header__nav" class="popup__open header__menu">
-                <i class="icon-menu"></i>
+    <div class="header__top">
+        <div data-link="header__nav" class="popup__open header__menu">
+            <i class="icon-menu"></i>
+        </div>
+        <a href="/" class="header__logo">Dadoo</a>
+        <div class="header__icons">
+            <!-- Меняется класс "hidden" в зависимости зашел ли пользователь в свой аккаунт или убирается с DOM дерева -->
+            <div data-link="header__account" class="popup__open2 header__icons-link hidden">
+                <i class="icon-user"></i>
+                <!-- ВАЖНО! Блок "#header__account" должен убираться с DOM дерева если пользователь НЕ залогинен -->
+                <div id="header__account" class="popup header__account">
+                    <div class="header__nav-top">
+                        <div class="popup__close header__nav-close">
+                            <i class="icon-close"></i>
+                        </div>
+                        <a href="/" class="header__logo">Dadoo</a>
+                        <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
+                    </div>
+                    <div class="header__popup-top">
+                        <span class="header__popup-title">Особистий кабінет</span>
+                        <span class="header__popup-desc">Вітаємо, <i>Віталій!</i></span>
+                    </div>
+                    <ul class="header__account-list">
+                        <li><a href="#">Мій аккаунт</a></li>
+                        <li><a href="#">Мої замовлення</a></li>
+                        <li><a href="#">Мої данні</a></li>
+                        <li><a href="#">Вихід</a></li>
+                    </ul>
+                </div>
+            </div>
+            <a data-link="login" class="popup__open header__icons-link"><i class="icon-user"></i></a>
+            <!--  -->
+            <a href="#" class="header__icons-link">
+                <i class="icon-heart"></i>
+                <i class="icon-heart-full hidden"></i>
+            </a>
+            <div data-link="header__bag" class="popup__open2 header__icons-link">
+                <i class="icon-bags"></i>
+                <div id="header__bag" class="popup header__bag">
+                    <div class="header__nav-top">
+                        <div class="popup__close header__nav-close">
+                            <i class="icon-close"></i>
+                        </div>
+                        <a href="/" class="header__logo">Dadoo</a>
+                        <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
+                    </div>
+                    <div class="header__popup-top">
+                        <span class="header__popup-title">Ваш кошик</span>
+                    </div>
+                    <!-- Меняется класс "hidden" в зависимости пустая корзина или нет -->
+                    <div class="header__bag-is">
+                        <div class="header__bag-list">
+                            <div class="header__bag-item">
+                                <div class="header__bag-item-wish">
+                                    <i class="icon-heart"></i>
+                                    <i class="icon-heart-full hidden"></i>
+                                </div>
+                                <a href="#" class="header__bag-item-img">
+                                    <img src="img/demo/vine.jpg" alt="">
+                                </a>
+                                <div class="header__bag-item-content">
+                                    <a href="#" class="header__bag-item-title">MAROTTI CAMPI</a>
+                                    <a href="#" class="header__bag-item-desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                    <a href="#" class="header__bag-item-delete">Видалити</a>
+                                </div>
+                                <!-- Если есть акционная цена, то здесь будет новая акционная цена -->
+                                <div class="header__bag-item-price">110.50 UAH</div>
+                            </div>
+                            <div class="header__bag-item">
+                                <div class="header__bag-item-wish">
+                                    <i class="icon-heart hidden"></i>
+                                    <i class="icon-heart-full"></i>
+                                </div>
+                                <a href="#" class="header__bag-item-img">
+                                    <img src="img/demo/vine.jpg" alt="">
+                                </a>
+                                <div class="header__bag-item-content">
+                                    <a href="#" class="header__bag-item-title">MAROTTI CAMPI</a>
+                                    <a href="#" class="header__bag-item-desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                    <a href="#" class="header__bag-item-delete">Видалити</a>
+                                </div>
+                                <!-- Если есть акционная цена, то здесь будет новая акционная цена -->
+                                <div class="header__bag-item-price">110.50 UAH</div>
+                            </div>
+                        </div>
+                        <div class="header__bag-summ">
+                            <span class="header__bag-summ-text">ДО СПЛАТИ:</span>
+                            <span class="header__bag-summ-price">221.00 UAH</span>
+                        </div>
+                        <a href="#" class="btn header__bag-btn">У кошик</a>
+                    </div>
+                    <div class="header__bag-no hidden">
+                        <div class="header__bag-notification">
+                            <i class="icon-bags"></i>
+                            <span>Ваш кошик поки що порожній.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header__search">
+            <form action="">
+                <input type="search" autocomplete="off" name="search" placeholder="Пошук">
+                <button type="submit"><i class="icon-search"></i></button>
+            </form>
+            <div class="header__lang">
+                <span>En <i class="icon-arrow"></i></span>
+                <ul class="header__lang-list">
+                    <li><a href="#">Uk</a></li>
+                    <li><a href="#">Ru</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="header__nav" class="popup header__nav">
+        <div class="header__nav-top">
+            <div class="popup__close header__nav-close">
+                <i class="icon-close"></i>
             </div>
             <a href="/" class="header__logo">Dadoo</a>
-            <div class="header__icons">
-            	<!-- Меняется класс "hidden" в зависимости зашел ли пользователь в свой аккаунт или убирается с DOM дерева -->
-                <a data-link="header__account" class="popup__open header__icons-link hidden"><i class="icon-user"></i></a>
-                <a data-link="login" class="popup__open header__icons-link"><i class="icon-user"></i></a>
-                <!--  -->
-
-                <a href="#" class="header__icons-link"><i class="icon-heart"></i></a>
-                <a data-link="header__bag" class="popup__open header__icons-link"><i class="icon-bags"></i></a>
-            </div>
-            <div class="header__search">
-                <form action="">
-                    <input type="search" autocomplete="off" name="search" placeholder="Пошук">
-                    <button type="submit"><i class="icon-search"></i></button>
-                </form>
-                <a href="#" class="header__lang">En</a>
-            </div>
+            <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
         </div>
-        <div id="header__nav" class="popup header__nav">
-            <div class="header__nav-top">
-                <div class="popup__close header__nav-close">
-                    <i class="icon-close"></i>
-                </div>
-                <a href="/" class="header__logo">Dadoo</a>
-                <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
-            </div>
-            <ul class="menu">
-                <li><a href="">Головна</a></li>
-                <li class="menu__catalog"><a href="#">КОКТЕЙЛІ</a>
-                    <ul>
-                        <li><a href="#">Червоне</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Montepulciano d'Abruzzo</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">БІЛЕ</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Ігристе</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">КРАЇНА</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">ПРИВІД</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu__catalog"><a href="#">Міцне</a>
-                    <ul>
-                        <li><a href="#">ЧЕРВОНЕ</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Montepulciano d'Abruzzo</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">БІЛЕ</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu__catalog"><a href="#">ВИНА</a>
-                    <ul>
-                        <li><a href="#">ЧЕРВОНЕ</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Montepulciano d'Abruzzo</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">БІЛЕ</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">Ігристе</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">КРАЇНА</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">ПРИВІД</a>
-                            <ul>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                                <li><a href="#">Lambrusco</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </li>
-                <li class="menu__catalog"><a href="#">ЗАКУСКИ</a></li>
-                <li class="menu__catalog"><a href="#">ПОДАРУНКИ</a></li>
-                <li class="menu__catalog"><a href="#">ІНШЕ</a></li>
-                <li class="menu__blog"><a href="#">БЛОГ</a>
-                    <ul>
-                        <li>
-                            <a href="#">
+        <ul class="menu">
+            <li><a href="">Головна</a></li>
+            <li class="menu__catalog"><a href="#">КОКТЕЙЛІ</a>
+                <ul>
+                    <li><a href="#">Червоне</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Montepulciano d'Abruzzo</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">БІЛЕ</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ігристе</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">КРАЇНА</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ПРИВІД</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu__catalog"><a href="#">Міцне</a>
+                <ul>
+                    <li><a href="#">ЧЕРВОНЕ</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Montepulciano d'Abruzzo</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">БІЛЕ</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu__catalog"><a href="#">ВИНА</a>
+                <ul>
+                    <li><a href="#">ЧЕРВОНЕ</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Montepulciano d'Abruzzo</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">БІЛЕ</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Ігристе</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">КРАЇНА</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">ПРИВІД</a>
+                        <ul>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                            <li><a href="#">Lambrusco</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu__catalog"><a href="#">ЗАКУСКИ</a></li>
+            <li class="menu__catalog"><a href="#">ПОДАРУНКИ</a></li>
+            <li class="menu__catalog"><a href="#">ІНШЕ</a></li>
+            <li class="menu__blog"><a class="menu__has-child" href="#">БЛОГ</a>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <div class="menu__blog--img">
                                 <img src="img/demo/blog1.jpg" alt="">
-                                <span>Чули про рожеве?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            </div>
+                            <span>Чули про рожеве?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="menu__blog--img">
                                 <img src="img/demo/blog2.jpg" alt="">
-                                <span>Насичені вечірні коктейлі</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            </div>
+                            <span>Насичені вечірні коктейлі</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="menu__blog--img">
                                 <img src="img/demo/blog1.jpg" alt="">
-                                <span>Чули про рожеве?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            </div>
+                            <span>Чули про рожеве?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="menu__blog--img">
+                                <img src="img/demo/blog1.jpg" alt="">
+                            </div>
+                            <span>Насичені вечірні коктейлі</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="menu__blog--img">
+                                <img src="img/demo/blog1.jpg" alt="">
+                            </div>
+                            <span>Чули про рожеве?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="menu__blog--img">
+                                <img src="img/demo/blog1.jpg" alt="">
+                            </div>
+                            <span>Чули про рожеве?</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="menu__blog--img">
                                 <img src="img/demo/blog2.jpg" alt="">
-                                <span>Насичені вечірні коктейлі</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
+                            </div>
+                            <span>Насичені вечірні коктейлі</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div class="menu__blog--img">
                                 <img src="img/demo/blog1.jpg" alt="">
-                                <span>Чули про рожеве?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="img/demo/blog1.jpg" alt="">
-                                <span>Чули про рожеве?</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="img/demo/blog2.jpg" alt="">
-                                <span>Насичені вечірні коктейлі</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <img src="img/demo/blog1.jpg" alt="">
-                                <span>Чули про рожеве?</span>
-                            </a>
-                        </li>
-                        <li class="menu__blog-all">
-                            <a href="#">Дивитись все</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+                            </div>
+                            <span>Чули про рожеве?</span>
+                        </a>
+                    </li>
+                    <li class="menu__blog-all">
+                        <a href="#">Дивитись все</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <!--  -->
+    <div id="header__message" class="popup header__message">
+        <div class="header__popup-top">
+            <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ</span>
+            <div class="popup__close header__popup-close"><i class="icon-close"></i></div>
         </div>
-        <!-- ВАЖНО! Блок "#header__account" должен убираться с DOM дерева если пользователь НЕ залогинен -->
-        <div id="header__account" class="popup header__account">
-            <div class="header__nav-top">
-                <div class="popup__close header__nav-close">
-                    <i class="icon-close"></i>
-                </div>
-                <a href="/" class="header__logo">Dadoo</a>
-                <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
-            </div>
-            <div class="header__popup-top">
-                <span class="header__popup-title">Особистий кабінет</span>
-                <span class="header__popup-desc">Вітаємо, <i>Віталій!</i></span>
-            </div>
-            <ul class="header__account-list">
-                <li><a href="#">Мій аккаунт</a></li>
-                <li><a href="#">МОЇ ЗАМОВЛЕННЯ</a></li>
-                <li><a href="#">МОЇ ДАННІ</a></li>
-                <li><a href="#">Вихід</a></li>
-            </ul>
-        </div>
-        <!--  -->
-        <div id="header__bag" class="popup header__bag">
-           	<div class="header__nav-top">
-           	    <div class="popup__close header__nav-close">
-           	        <i class="icon-close"></i>
-           	    </div>
-           	    <a href="/" class="header__logo">Dadoo</a>
-           	    <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
-           	</div>
-            <div class="header__popup-top">
-                <span class="header__popup-title">Ваш кошик</span>
-            </div>
-            <!-- Меняется класс "hidden" в зависимости пустая корзина или нет -->
-            <div class="header__bag-is">
-	            <div class="header__bag-list">
-	                <div class="header__bag-item">
-	                    <div class="header__bag-item-wish">
-	                        <i class="icon-heart"></i>
-	                        <i class="icon-heart-full hidden"></i>
-	                    </div>
-	                    <a href="#" class="header__bag-item-img">
-	                        <img src="img/demo/vine.jpg" alt="">
-	                    </a>
-	                    <div class="header__bag-item-content">
-		                    <a href="#" class="header__bag-item-title">MAROTTI CAMPI</a>
-		                    <a href="#" class="header__bag-item-desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
-	                    	<a href="#" class="header__bag-item-delete">Видалити</a>
-	                    </div>
-	                    <!-- Если есть акционная цена, то здесь будет новая акционная цена -->
-	                    <div class="header__bag-item-price">110.50 UAH</div>
-	                </div>
-	                <div class="header__bag-item">
-	                    <div class="header__bag-item-wish">
-	                        <i class="icon-heart hidden"></i>
-	                        <i class="icon-heart-full"></i>
-	                    </div>
-	                    <a href="#" class="header__bag-item-img">
-	                        <img src="img/demo/vine.jpg" alt="">
-	                    </a>
-	                    <div class="header__bag-item-content">
-		                    <a href="#" class="header__bag-item-title">MAROTTI CAMPI</a>
-		                    <a href="#" class="header__bag-item-desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
-	                    	<a href="#" class="header__bag-item-delete">Видалити</a>
-	                    </div>
-	                    <!-- Если есть акционная цена, то здесь будет новая акционная цена -->
-	                    <div class="header__bag-item-price">110.50 UAH</div>
-	                </div>
-	            </div>
-	            <div class="header__bag-summ">
-	            	<span class="header__bag-summ-text">ДО СПЛАТИ:</span>
-	            	<span class="header__bag-summ-price">221.00 UAH</span>
-	            </div>
-	            <div class="btn header__bag-btn">У кошик</div>
-            </div>
-            <div class="header__bag-no hidden">
-            	<div class="header__bag-notification">
-            		<i class="icon-bags"></i>
-            		<span>Ваш кошик поки що порожній.</span>
-            	</div>
-            </div>
-        </div>
-        <div id="header__message" class="popup header__message">
-        	<div class="header__popup-top">
-                <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ</span>
-                <div class="popup__close header__message-close"><i class="icon-close"></i></div>
-            </div>
-            <div class="header__message-content">
-            	Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
-            </div>
+        <div class="header__message-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
         </div>
     </div>
 </header>

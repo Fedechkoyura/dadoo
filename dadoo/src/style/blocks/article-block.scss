@@ -1,19 +1,25 @@
 .article-block {
+    &--last {
+        margin-bottom: 29px;
+    }
     &__content {
         position: relative;
-		display: block;
-		height: calc(200px + 12vw);
-		margin-bottom: 4px;
+        display: block;
+        height: calc(200px + 12vw);
+        margin-bottom: 4px;
     }
     &__img {
         display: flex;
         justify-content: center;
         align-items: center;
         height: 100%;
+        border-radius: 2px;
+        overflow: hidden;
         img {
             max-width: inherit;
             height: 100%;
             min-width: 100%;
+            border-radius: 2px;
             object-fit: cover;
         }
     }
@@ -39,26 +45,50 @@
             font-size: 1.2em;
         }
     }
-    &__view{
-    	position: absolute;
-    	z-index: 2;
-    	top: 11px;
-    	right: 17px;
-    	color: rgba(255, 255, 255, 0.6);
-    	display: flex;
-    	align-items: center;
-    	i{
-    		font-size: 1.7em;
-    		margin-right: 12px;
-    		position: relative;
-    		top: -0.5px;
-    	}
-    	span{
-    		font-size: 0.8em;
-    	}
+    &__view {
+        position: absolute;
+        z-index: 2;
+        top: 11px;
+        right: 17px;
+        color: rgba(255, 255, 255, 0.6);
+        display: flex;
+        align-items: center;
+        i {
+            font-size: 1.7em;
+            margin-right: 12px;
+            position: relative;
+            top: -0.5px;
+        }
+        span {
+            font-size: 0.8em;
+        }
     }
-    &__products{
-    	display: flex;
-    	flex-direction: column;
+    &__products {
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (min-width:768px) {
+    .article-block {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+        margin-left: 4px;
+        margin-right: 4px;
+        height: 362px;
+        &__content {
+            width: 50%;
+            margin-bottom: 0;
+            height: auto;
+            transition: all .3s ease-in-out;
+            &:hover{
+                opacity: 0.8;
+            }
+        }
+        &__products {
+            width: calc(50% - 4px);
+            justify-content: space-between;
+        }
     }
 }

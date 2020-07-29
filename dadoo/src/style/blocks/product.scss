@@ -31,6 +31,7 @@
     &__content{
         display: flex;
         flex-direction: column;
+        flex-grow: 1;
     }
     &__sticker {
         &-list {
@@ -141,6 +142,7 @@
         display: flex;
         flex-direction: column;
         width: 100%;
+        margin-top: auto;
         >* {
             min-height: 26px;
         }
@@ -201,6 +203,7 @@
         .product__content{
             justify-content: flex-start;
             text-align: left;
+            flex-grow: 1;
         }
         .product__title{
             padding-right: 30px;
@@ -213,10 +216,12 @@
             
         }
         .product__img{
+            max-width: 100px;
             margin-left: 0;
             margin-right: 11px;
         }
         .product__actions{
+            max-width: 300px;
             >*{
                 min-height: 28px;
             }
@@ -229,6 +234,89 @@
         width: 155px;
         &:last-of-type{
             margin-right: 15px !important;
+        }
+    }
+}
+@media (min-width:768px){
+    .product{
+        &--article-block{
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+@media (min-width:1024px){
+    .product{
+        &__wish{
+            cursor: pointer;
+            top: 7px;
+            i{
+                font-size: 14px;
+                transition: all .3s ease-in-out;
+                &.hidden{
+                    display: flex !important;
+                    opacity: 0;
+                }
+            }
+            &:hover{
+                i.icon-heart-full{
+                    opacity: 1;
+                }
+                i.icon-heart{
+                    opacity: 0;
+                }
+            }
+        }
+        &__buy{
+            &:hover{
+                border-color: $red;
+                background: #fff;
+                color: $red;
+            }
+        }
+        &__number{
+            span{
+                cursor: pointer;
+                transition: all .3s ease-in-out;
+            }
+            &-plus{
+                border: 1px solid $red;
+                &:hover{
+                    background: none;
+                    color: $red;
+                }
+            }
+            &-minus{
+                &:hover{
+                    border-color: $red;
+                }
+            }
+        }
+        &__title{
+            margin-bottom: 9px;
+        }
+        &--article-block{
+            .product{
+                &__desc{
+                    margin-bottom: 20px;
+                    width: 80%;
+                }
+                &__actions{
+                    display: none;
+                }
+                &__img{
+                    width: 112px;
+                    max-width: inherit;
+                }
+                &__content{
+                    width: 80%;
+                }
+            }
+        }
+        &--popular{
+            &:last-of-type{
+                margin-right: 0 !important;
+            }
         }
     }
 }
