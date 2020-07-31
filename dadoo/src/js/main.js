@@ -1,13 +1,17 @@
 function oldNo() {
     $('header, main, footer, body > div:not(#how-old)').remove();
 }
-
 function oldYes() {
-    $('body').removeClass('no-scroll');
-    $('#how-old').css('transform', 'translateX(100vw)');
+    $('#how-old').addClass('open');
+    $('.overlay2').removeClass('open');
     setTimeout(function() {
         $('#how-old').remove();
     }, 500);
+}
+function loginForgotSuccess() {
+    event.preventDefault();
+    $('.login__forgot .login__form, .login__forgot .login__links').addClass('close');
+    $('.login__forgot-success').addClass('open');
 }
 
 $(document).ready(function() {
@@ -56,17 +60,15 @@ $(document).ready(function() {
         $('body').addClass('no-scroll');
     });
 
-    $('.popup__close').click(function(event) {
-        $('.popup').removeClass('open');
+    function popupClose(){
+        $('.popup:not("#login__enter"), .login__forgot-success, .overlay2')
+            .removeClass('open');
+        $('.login__form, .login__links').removeClass('close');
+        $('.login__enter').removeClass('login__enter--hidden');
         $('body').removeClass('no-scroll');
-        $('.overlay2').removeClass('open');
-    });
-
-    $('.overlay2').click(function(event) {
-        $('.popup:not("#login__enter")').removeClass('open');
-        $('body').removeClass('no-scroll');
-        $(this).removeClass('open');
-    });
+    }
+    $('.popup__close').click(popupClose);
+    $('.overlay2').click(popupClose);
 
     $('.login__close-this').click(function(event) {
         $(this).parent().parent().removeClass('open');

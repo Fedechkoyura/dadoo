@@ -92,3 +92,44 @@
         }
     }
 }
+@media (min-width:1024px){
+    .article-block{
+        margin-left: 0;
+        margin-right: 0;
+        &--right{
+            flex-direction: row-reverse;
+        }
+    }
+}
+@media (min-width:1280px){
+    .article-block{
+        height: 374px;
+        &__content{
+            h2 {
+                font-size: 2.65em;
+                margin-bottom: 11px;
+                width: 90%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            p {
+                font-size: 1.4em;
+            }
+        }
+        &__view{
+            right: 27px;
+            top: 23px;
+            span{
+                font-size: 0.9em;
+            }
+        }
+        &__products{
+            width: calc(50% - 8px);
+        }
+    }
+}
+@media (min-width:1900px){
+    .article-block{
+        height: 450px;
+    }
+}

@@ -1,4 +1,11 @@
 .how-old {
+    &.open{
+        transform: translateX(100%) !important;
+    }
+    &.popup{
+        z-index: 9999;
+        transform: none;
+    }
     text-align: center;
     .header__nav-lang,
     .header__nav-close {
@@ -57,5 +64,71 @@
     	.how-old__desc{
     		width: 250px;
     	}
+    }
+}
+@media (min-width:1024px){
+    .how-old{
+        transform: translateY(-50%) !important;
+        &.popup{
+            opacity: 1;
+            visibility: visible;
+            top: 50%;
+            height: 409px;
+            width: 510px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            overflow: hidden;
+        }
+        &.open{
+            transform: translateY(-50%) !important;
+            opacity: 0;
+            visibility: hidden;
+        }
+        .header__nav-top{
+            display: flex !important;
+            justify-content: center;
+        }
+        .header__logo{
+            margin-left: 0;
+        }
+        .popup{
+            height: calc(100% - 51.5px);
+            padding: 80px 84px 51px;
+            border: none;
+        }
+        &__ask{
+            position: static;
+            transform: none !important;
+            opacity: 1;
+            visibility: visible;
+        }
+        &__title{
+            margin-bottom: 34px;
+            width: auto;
+            font-size: 1.25em;
+        }
+        &__desc{
+            margin-top: 0;
+        }
+        &__sorry{
+            top: calc(50% + 26px);
+            &.popup{
+                
+            }
+        }
+        &__yes,
+        &__back{
+            &:hover{
+                background: none;
+                color: $red;
+                border-color: $red;
+            }
+        }
+        &__no{
+            &:hover{
+                border-color: $red;
+            }
+        }
     }
 }

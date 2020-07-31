@@ -23,6 +23,7 @@
         font-size: 21px;
         text-transform: uppercase;
         margin-top: 3px;
+        outline: none;
     }
     &__menu {
         margin-left: 7px;
@@ -95,6 +96,7 @@
                 border: none;
                 color: #999999;
                 cursor: pointer;
+                outline: none;
             }
         }
     }
@@ -129,10 +131,18 @@
             }
         }
         &-close{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             position: absolute;
             font-size: 18px;
+            width: 18px;
+            height: 18px;
             color: #999;
             right: 25px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
         }
     }
     &__nav {
@@ -302,6 +312,7 @@
                 line-height: 1.8;
                 width: 100px;
                 text-align: center;
+                color: #484848;
             }
         }
     }
@@ -449,6 +460,8 @@
         &__popup-close{
             cursor: pointer;
             transition: all .3s ease-in-out;
+            font-size: 13px;
+            top: 2px;
             &:hover{
                 opacity: 0.5;
             }
@@ -491,6 +504,7 @@
         &__account {
             &.popup {
                 position: absolute;
+                z-index: 20;
                 top: 100%;
                 right: 2%;
                 left: auto;
@@ -498,7 +512,7 @@
                 box-shadow: 0 24px 34px 0 rgba(0, 0, 0, 0.09);
                 border: 1px solid #F1F1F1;
                 border-radius: 2px;
-                transform: translateY(-10px);
+                transform: translateY(-10px) !important;
                 opacity: 0;
                 visibility: hidden;
                 transition: all .3s ease-in-out;
@@ -586,10 +600,100 @@
             &-summ {
                 font-size: 1em;
             }
+            &-notification{
+                margin: 50px 20px 60px;
+                span{
+                    width: 130px;
+                }
+            }
             &-btn {
                 &:hover {
                     background: $red;
                 }
+            }
+        }
+        &__message{
+            width: 471px;
+            left: 0;
+            right: 0;
+            margin: auto;
+            &-content{
+                padding: 72px 61px 107px;
+            }
+        }
+    }
+}
+@media (min-width:1280px){
+    .header{
+        &__top{
+            padding: 8px 10.2%;
+        }
+        &__nav{
+            padding: 0 10.2%;
+        }
+        &__search{
+            margin-left: 9%;
+        }
+        &__icons{
+            position: relative;
+        }
+        &__bag,
+        &__account{
+            &.popup{
+                top: calc(100% + 18px);
+                right: 0;
+                left: auto;
+                transform: translateX(40%) !important;
+            }
+        }
+    }
+}
+@media (min-width:1900px){
+    .header{
+        &__logo{
+            font-size: 24px;
+            width: 95px;
+        }
+        &__icons{
+            width: 95px;
+            &-link{
+                > i{
+                    font-size: 20px;
+                }
+            }
+        }
+        &__top{
+            padding-top: 13px;
+            padding-bottom: 10px;
+        }
+        &__search{
+            width: 430px;
+        }
+        &__lang{
+            position: relative;
+            top: -3px;
+            ul{
+                width: 72px;
+                li{
+                    a{
+                        height: 32px;
+                    }
+                }
+            }
+        }
+        &__bag{
+            width: 400px;
+            &-item{
+                &-wish{
+                    i{
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        &__popup{
+            &-close{
+                font-size: 15px;
             }
         }
     }

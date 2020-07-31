@@ -1,4 +1,5 @@
 .login {
+	overflow: hidden;
     .header__popup-close {
         display: none;
     }
@@ -37,7 +38,7 @@
                     color: $red;
                     font-size: 7px;
                     position: relative;
-                    top: 1px;
+                    top: 0.5px;
                     left: .5px;
                     transition: all .3s ease-in-out;
                     opacity: 0;
@@ -87,7 +88,7 @@
             border-radius: 22px;
             position: relative;
             margin-bottom: 10px;
-            img {
+            svg {
                 position: absolute;
                 top: 0;
                 bottom: 0;
@@ -97,24 +98,100 @@
         &-fb {
             background: #1B66CA;
             color: #fff;
-            img {
+            svg {
                 left: 26px;
+                width: 9px;
+                height: 18px;
+                fill: #fff;
             }
         }
         &-google {
             background: #F2F2F2;
             color: #000;
-            img {
+            svg {
                 left: 20px;
+                width: 18.5px;
+                height: 18.5px;
             }
         }
+    }
+    &__form,
+    &__links{
+    	transition: all 0s ease-in-out;
+    	&.close{
+    		opacity: 0;
+			visibility: hidden;
+			position: absolute;
+    	}
+    }
+    &__forgot{
+    	position: relative;
+    	&-success{
+    		height: calc(100% - 100px);
+    		transition: all .3s ease-in-out;
+    		position: absolute;
+    		top: 0;
+    		left: 0;
+    		opacity: 0;
+    		visibility: hidden;
+    		&.open{
+    			position: static;
+    			opacity: 1;
+    			visibility: visible;
+    		}
+    		&-wrapper{
+    			display: flex;
+    			flex-direction: column;
+    			align-items: center;
+    			justify-content: center;
+    			height: 100%;
+    		}
+    		.icon-success{
+    			font-size: 61px;
+    			color: #63DF36;
+    			margin-bottom: 28px;
+    		}
+    		p{
+    			margin: 0 0 15px 0;
+    			max-width: 261px;
+    			text-align: center;
+    			font-size: 1.4em;
+    			font-family: $robotoR;
+    			color: #484848;
+    		}
+    		a{
+    			font-family: $montM;
+    			letter-spacing: 1.32px;
+    			text-decoration: underline;
+    			color: #999;
+    		}
+    	}
     }
 }
 
 @media (min-width:1024px) {
     .login {
+        width: 510px;
+        height: 100vh;
+        left: 50%;
+        right: auto;
+        transform: translate(-50%, -50%) !important;
+        bottom: auto;
+        z-index: 21;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+        background: transparent;
+        overflow: visible;
+        border: none;
+        box-shadow: none;
+        &.open {
+            left: 50%;
+            opacity: 1;
+            visibility: visible;
+        }
         .header__popup-close {
-            display: block;
+        	display: flex;
         }
         .login__enter {
             transform: translateY(-50%) !important;
@@ -130,5 +207,94 @@
                 }
             }
         }
+        &__form{
+        	padding: 35px 115px 0;
+        	.input{
+        		margin-left: 0;
+        		margin-right: 0;
+        	}
+        	&-links{
+        		margin: 0 0 17px 10px;
+        		label,a{
+        			font-size: 0.9em;
+        			cursor: pointer;
+        		}
+        	}
+        	&-remember{
+    			&:hover{
+    				span{
+    					border-color: $red;
+    				}	
+    			}
+        		span{
+        		}
+        	}
+	        &-forgot{
+	        	&:hover{
+	        		text-decoration: none;
+	        	}
+	        }
+        	.btn{
+        		font-size: 1em;
+        		padding-top: 5px;
+        		&:hover{
+        			background: none;
+        			border-color: $red;
+        			color: $red;
+        		}
+        	}
+        }
+        &__links{
+        	margin: 0 115px 70px;
+        	a{
+        		font-size: 0.9em;
+        		cursor: pointer;
+        		font-family: $robotoR;
+        		transition: all .3s ease-in-out;
+        		&:first-of-type{
+        			&:hover{
+        				text-decoration: none;
+        			}
+        		}
+        	}
+        	&-fb{
+        		border: 1px solid #1B66CA;
+        		svg{
+        			fill: #fff;
+        			transition: all .3s ease-in-out;
+        		}
+        		&:hover{
+        			background: transparent;
+        			color: #1B66CA;
+        			text-decoration: none;
+        			svg{
+        				fill: #1B66CA;
+        			}
+        		}
+        	}
+        	&-google{
+        		margin-bottom: 0;
+        		border: 1px solid #F2F2F2;
+        		transition: all .3s ease-in-out;
+        		&:hover{
+        			border-color: #AFAFAF;
+        			background: transparent;
+        			text-decoration: none;
+        		}
+        	}
+        }
+        &__forgot{
+        	&-success{
+        		&-wrapper{
+        			padding-top: 80px;
+        			padding-bottom: 120px;
+        		}
+        	}
+        }
+    }
+}
+@media (min-width:1900px){
+    .login{
+        width: 600px;
     }
 }

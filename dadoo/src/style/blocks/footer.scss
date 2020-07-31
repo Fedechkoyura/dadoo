@@ -304,3 +304,99 @@
         }
     }
 }
+@media (min-width:1280px){
+    .footer{
+        .container--footer{
+            position: relative;
+        }
+        &__logo{
+            margin-bottom: 40px;
+        }
+        &__top{
+            padding-top: 40px;
+        }
+        &__nav{
+            >ul{
+                >li{
+                    > span{
+                        font-size: 0.9em;
+                    }
+                    ul{
+                        li{
+                            &:last-child{
+                                margin-bottom: 42px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &__bottom{
+            padding: 10px 0;
+        }
+        &__dev,&__cards{
+            width: 450px;
+            margin-bottom: 0;
+        }
+        &__dev{
+            padding-right: 4vw;
+        }
+        &__soc{
+            padding: 0;
+        }
+        &__up{
+            top: auto;
+            bottom: 63px;
+            right: 0;
+            transform: translateX(100%);
+            i{
+                left: 0;
+            }
+        }
+    }
+}
+@media (min-width:1900px){
+    .footer{
+        &__logo{
+            a{
+                width: 95px;
+                font-size: 24px;
+            }
+        }
+        &__cards{
+            img{
+                height: auto;
+                &:first-child{
+                    width: 45px;
+                }
+                &:last-child{
+                    width: 35px;
+                }
+            }
+        }
+        &__soc{
+            ul{
+                li{
+                    a{
+                        font-size: 26px;
+                        &.icon-youtube{
+                            font-size: 29px;
+                            top: -1px;
+                        }
+                    }
+                }
+            }
+        }
+        &__dev{
+            img{
+                width: 78px;
+            }
+        }
+        &__up{
+            i{
+                left: 0;
+                transform: translateX(-0.2px) rotate(180deg);
+            }
+        }
+    }
+}

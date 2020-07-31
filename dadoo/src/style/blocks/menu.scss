@@ -307,3 +307,24 @@
         }
     }
 }
+@media (min-width:1280px) {
+    .menu {
+        >li {
+            >ul {
+                padding: 0 calc(10.2% + 25px) 35px;
+            }
+        }
+    }
+    .menu>li.menu__blog>ul {
+        padding: 13px calc(10.2% + 38px) 40px;
+    }
+    .menu>li.menu__blog>ul::before {
+        right: calc(10.2% + 25px);
+    }
+    .menu>li.menu__blog>ul::after {
+        left: calc(10.2% + 25px);
+    }
+    .menu>li.menu__blog>ul li a .menu__blog--img {
+        height: 13.2vw;
+    }
+}

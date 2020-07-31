@@ -1,45 +1,77 @@
-.slider{
-	height: 283px;
-	overflow: hidden;
-	position: relative;
-	margin-bottom: 7px;
-	&__img{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-		img{
-			max-width: inherit;
-			height: 100%;
-			min-width: 100%;
-			object-fit: cover;
-		}
-	}
-	&__content{
-		position: absolute;
-		z-index: 2;
-		color: #FFF;
-		top: 50%;
-		left: 50%;
-		transform: translate(-50%, -50%);
-		text-align: center;
-		width: 100%;
-		max-width: 400px;
-		h1{
-			font-size: 1.4em;
-			line-height: 1.2;
-			margin-bottom: 6px;
-			text-transform: uppercase;
-		}
-		p{
-			margin: 0;
-			font-family: $robotoL;
-			font-size: 1.2em;
-		}
+.slider {
+    height: 283px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 7px;
+    display: block;
+    &__img {
+        border-radius: 3px;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        img {
+            max-width: inherit;
+            height: 100%;
+            min-width: 100%;
+            object-fit: cover;
+            border-radius: 3px;
+        }
+    }
+    &__content {
+        position: absolute;
+        z-index: 2;
+        color: #FFF;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 100%;
+        max-width: 400px;
+        h1 {
+            font-size: 1.4em;
+            line-height: 1.2;
+            margin-bottom: 6px;
+            text-transform: uppercase;
+        }
+        p {
+            margin: 0;
+            font-family: $robotoL;
+            font-size: 1.2em;
+        }
+    }
+}
+@media (min-width:768px) {
+    .slider {
+        height: 300px;
+    }
+}
+@media (min-width:1024px){
+	.slider{
+		
 	}
 }
-@media (min-width:768px){
+@media (min-width:1280px) {
+    .slider {
+        height: 31.4vw;
+        max-height: 60%;
+        &__content {
+            max-width: 470px;
+            h1 {
+                font-size: 2.65em;
+                margin-bottom: 11px;
+            }
+            p {
+                font-size: 1.4em;
+            }
+        }
+    }
+}
+@media (min-width:1900px){
 	.slider{
-		height: 300px;
+		&__content{
+			max-width: 520px;
+		}
 	}
 }
