@@ -23,7 +23,7 @@
             <a href="/" class="header__logo">Dadoo</a>
             <div class="header__icons">
                 <!-- Меняется класс "hidden" в зависимости зашел ли пользователь в свой аккаунт или убирается с DOM дерева -->
-                <div data-link="header__account" class="popup__open2 header__icons-link hidden">
+                <div data-link="header__account" class="popup__open2 header__icons-link">
                     <i class="icon-user"></i>
                     <!-- ВАЖНО! Блок "#header__account" должен убираться с DOM дерева если пользователь НЕ залогинен -->
                     <div id="header__account" class="popup header__account">
@@ -46,9 +46,10 @@
                         </ul>
                     </div>
                 </div>
-                <a data-link="login" class="popup__open header__icons-link"><i class="icon-user"></i></a>
+                <a data-link="login" class="popup__open header__icons-link hidden"><i class="icon-user"></i></a>
                 <!--  -->
                 <a href="#" class="header__icons-link">
+                    <!-- Меняется в зависимости есть ли товары в избранном -->
                     <i class="icon-heart"></i>
                     <i class="icon-heart-full hidden"></i>
                 </a>
@@ -65,7 +66,7 @@
                         <div class="header__popup-top">
                             <span class="header__popup-title">Ваш кошик</span>
                         </div>
-                        <!-- Меняется класс "hidden" в зависимости пустая корзина или нет -->
+                        <!-- Меняется класс "hidden" в зависимости пустая корзина или нет или убирается из dom дерева-->
                         <div class="header__bag-is">
                             <div class="header__bag-list">
                                 <div class="header__bag-item">
@@ -421,15 +422,24 @@
             </ul>
         </div>
         <!--  -->
-        <div id="header__message" class="popup header__message">
+        <!-- <div id="header__message" class="popup header__message">
             <div class="header__popup-top">
                 <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ</span>
-                <div class="popup__close header__popup-close"><i class="icon-close"></i></div>
+                <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
             </div>
             <div class="header__message-content">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
             </div>
         </div>
+        <div id="header__message" class="popup header__message">
+            <div class="header__popup-top">
+                <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ</span>
+                <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
+            </div>
+            <div class="header__message-content">
+                2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
+            </div>
+        </div> -->
     </header>
     <main class="main">
         <div class="container">
@@ -1788,6 +1798,12 @@
             <!--  -->
             <div class="login__links">
                 <a class="login__close-this" href="#">Я згадав пароль</a>
+                <a class="login__links-btn login__links-fb">
+                    <svg>
+                        <use xlink:href="img/iconSprite.svg#facebook"></use>
+                    </svg>
+                    Вхід через Facebook
+                </a>
                 <a class="login__links-btn login__links-google">
                     <svg>
                         <use xlink:href="img/iconSprite.svg#google"></use>
@@ -1811,7 +1827,7 @@
             <li><a href="#">Російська мова</a></li>
         </ul>
     </div>
-    <div id="how-old" class="popup how-old">
+    <!-- <div id="how-old" class="popup how-old">
         <div class="header__nav-top">
             <div class="popup__close header__nav-close">
                 <i class="icon-close"></i>
@@ -1838,10 +1854,11 @@
                 <a onclick="window.history.back()" class="btn how-old__back" href="#">Назад</a>
             </div>
         </div>
-    </div>
+    </div> -->
     
     <div class="overlay"></div>
-    <div class="overlay2 open"></div>
+    <div class="overlay2"></div>
+    <!-- <div class="overlay--how-old open"></div> -->
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/swiper.js"></script>

@@ -1,5 +1,5 @@
 .how-old {
-    &.open{
+    &.close{
         transform: translateX(100%) !important;
     }
     &.popup{
@@ -80,7 +80,7 @@
             margin: auto;
             overflow: hidden;
         }
-        &.open{
+        &.close{
             transform: translateY(-50%) !important;
             opacity: 0;
             visibility: hidden;

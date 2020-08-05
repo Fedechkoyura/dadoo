@@ -1,13 +1,17 @@
 function oldNo() {
     $('header, main, footer, body > div:not(#how-old)').remove();
 }
+
 function oldYes() {
-    $('#how-old').addClass('open');
-    $('.overlay2').removeClass('open');
+    $('#how-old').addClass('close');
+    $('.overlay--how-old').removeClass('open');
+    $('body').removeClass('no-scroll');
     setTimeout(function() {
         $('#how-old').remove();
+        $('.overlay--how-old').remove();
     }, 500);
 }
+
 function loginForgotSuccess() {
     event.preventDefault();
     $('.login__forgot .login__form, .login__forgot .login__links').addClass('close');
@@ -21,12 +25,12 @@ $(document).ready(function() {
     $('.footer__up').click(function() {
         $('html, body').animate({ scrollTop: 0 }, 1000);
     });
-    var windowWidth = window.innerWidth;
+    let windowWidth = window.innerWidth;
     // Function after risize
     function resizeWIndow(myFunc) {
         myFunc();
         window.addEventListener("resize", resizeThrottler, false);
-        var resizeTimeout;
+        let resizeTimeout;
 
         function resizeThrottler() {
             // ignore resize events as long as an actualResizeHandler execution is in the queue
@@ -55,12 +59,11 @@ $(document).ready(function() {
 
     // MENU
     $('.popup__open').click(function(event) {
-        console.log('click')
         $('#' + $(this).attr('data-link')).toggleClass('open');
         $('body').addClass('no-scroll');
     });
 
-    function popupClose(){
+    function popupClose() {
         $('.popup:not("#login__enter"), .login__forgot-success, .overlay2')
             .removeClass('open');
         $('.login__form, .login__links').removeClass('close');
@@ -73,6 +76,18 @@ $(document).ready(function() {
     $('.login__close-this').click(function(event) {
         $(this).parent().parent().removeClass('open');
         $('#login__enter').removeClass('login__enter--hidden');
+    });
+
+    $('.header__message-close').click(function(event) {
+        let myThis = $(this);
+        myThis.parent().parent().css('opacity', '0');
+        setTimeout(function() {
+            myThis.parent().parent().remove();
+        }, 300);
+    });
+
+    $('.input--error').click(function(event) {
+        $(this).removeClass('input--error');
     });
 
     function openClosePopup() {
@@ -146,16 +161,18 @@ $(document).ready(function() {
     // MENU -- END
 
     // INPUT PLUS $ MINUS
-    $('.product__number-minus').click(function() {
-        var $input = $(this).parent().find('input');
-        var count = parseInt($input.val()) - 1;
+    $('.product__number-minus').click(function(event) {
+        event.preventDefault();
+        let $input = $(this).parent().find('input');
+        let count = parseInt($input.val()) - 1;
         count = count < 1 ? 1 : count;
         $input.val(count);
         $input.change();
         return false;
     });
-    $('.product__number-plus').click(function() {
-        var $input = $(this).parent().find('input');
+    $('.product__number-plus').click(function(event) {
+        event.preventDefault();
+        let $input = $(this).parent().find('input');
         $input.val(parseInt($input.val()) + 1);
         $input.change();
         return false;
@@ -172,5 +189,43 @@ $(document).ready(function() {
         }
     }
     resizeWIndow(footerNav);
+    // 
+
+    // CATEGORY TEXT
+    let textHeightSmall;
+    function setSmallHeight(){
+        if (windowWidth < 768) {
+            textHeightSmall = '124px';
+        } else if (windowWidth < 1280) {
+            textHeightSmall = '144px';
+        } else if (windowWidth < 1900) {
+            textHeightSmall = '144px';
+        } else {
+            textHeightSmall = '175px';
+        }
+    }
+    $('.page-desc__btn-show').click(function(event) {
+        setSmallHeight();
+        let textHeight = $('.page-desc__content').height();
+        $('.page-desc').css('height', textHeight + 40 + 'px');
+        $('.page-desc').toggleClass('open');
+        $('.page-desc__btn-item').fadeToggle(0);
+        console.log(textHeightSmall)
+    });
+    $('.page-desc__btn-hide').click(function(event) {
+        setSmallHeight();
+        $('.page-desc').css('height', textHeightSmall);
+        $('.page-desc__btn-item').fadeToggle(0);
+        $('.page-desc').toggleClass('open');
+        console.log(textHeightSmall)
+    });
+    // 
+
+    // CATEGORY SORT
+    $('.category__list-sort-links a').click(function(event) {
+        let choosedSort = $(this).text();
+        console.log(choosedSort);
+        $('.category__list-sort-picked span').text(choosedSort);
+    });
     // 
 });

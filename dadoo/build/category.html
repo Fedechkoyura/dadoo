@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <title>Dadoo</title>
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header class="header">
+        <div class="header__top">
+            <div data-link="header__nav" class="popup__open header__menu">
+                <i class="icon-menu"></i>
+            </div>
+            <a href="/" class="header__logo">Dadoo</a>
+            <div class="header__icons">
+                <!-- Меняется класс "hidden" в зависимости зашел ли пользователь в свой аккаунт или убирается с DOM дерева -->
+                <div data-link="header__account" class="popup__open2 header__icons-link">
+                    <i class="icon-user"></i>
+                    <!-- ВАЖНО! Блок "#header__account" должен убираться с DOM дерева если пользователь НЕ залогинен -->
+                    <div id="header__account" class="popup header__account">
+                        <div class="header__nav-top">
+                            <div class="popup__close header__nav-close">
+                                <i class="icon-close"></i>
+                            </div>
+                            <a href="/" class="header__logo">Dadoo</a>
+                            <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
+                        </div>
+                        <div class="header__popup-top">
+                            <span class="header__popup-title">Особистий кабінет</span>
+                            <span class="header__popup-desc">Вітаємо, <i>Віталій!</i></span>
+                        </div>
+                        <ul class="header__account-list">
+                            <li><a href="#">Мій аккаунт</a></li>
+                            <li><a href="#">Мої замовлення</a></li>
+                            <li><a href="#">Мої данні</a></li>
+                            <li><a href="#">Вихід</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <a data-link="login" class="popup__open header__icons-link hidden"><i class="icon-user"></i></a>
+                <!--  -->
+                <a href="#" class="header__icons-link">
+                    <!-- Меняется в зависимости есть ли товары в избранном -->
+                    <i class="icon-heart"></i>
+                    <i class="icon-heart-full hidden"></i>
+                </a>
+                <div data-link="header__bag" class="popup__open2 header__icons-link">
+                    <i class="icon-bags"></i>
+                    <div id="header__bag" class="popup header__bag">
+                        <div class="header__nav-top">
+                            <div class="popup__close header__nav-close">
+                                <i class="icon-close"></i>
+                            </div>
+                            <a href="/" class="header__logo">Dadoo</a>
+                            <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
+                        </div>
+                        <div class="header__popup-top">
+                            <span class="header__popup-title">Ваш кошик</span>
+                        </div>
+                        <!-- Меняется класс "hidden" в зависимости пустая корзина или нет или убирается из dom дерева-->
+                        <div class="header__bag-is">
+                            <div class="header__bag-list">
+                                <div class="header__bag-item">
+                                    <div class="header__bag-item-wish">
+                                        <i class="icon-heart"></i>
+                                        <i class="icon-heart-full hidden"></i>
+                                    </div>
+                                    <a href="#" class="header__bag-item-img">
+                                        <img src="img/demo/vine.jpg" alt="">
+                                    </a>
+                                    <div class="header__bag-item-content">
+                                        <a href="#" class="header__bag-item-title">MAROTTI CAMPI</a>
+                                        <a href="#" class="header__bag-item-desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                        <a href="#" class="header__bag-item-delete">Видалити</a>
+                                    </div>
+                                    <!-- Если есть акционная цена, то здесь будет новая акционная цена -->
+                                    <div class="header__bag-item-price">110.50 UAH</div>
+                                </div>
+                                <div class="header__bag-item">
+                                    <div class="header__bag-item-wish">
+                                        <i class="icon-heart hidden"></i>
+                                        <i class="icon-heart-full"></i>
+                                    </div>
+                                    <a href="#" class="header__bag-item-img">
+                                        <img src="img/demo/vine.jpg" alt="">
+                                    </a>
+                                    <div class="header__bag-item-content">
+                                        <a href="#" class="header__bag-item-title">MAROTTI CAMPI</a>
+                                        <a href="#" class="header__bag-item-desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                        <a href="#" class="header__bag-item-delete">Видалити</a>
+                                    </div>
+                                    <!-- Если есть акционная цена, то здесь будет новая акционная цена -->
+                                    <div class="header__bag-item-price">110.50 UAH</div>
+                                </div>
+                            </div>
+                            <div class="header__bag-summ">
+                                <span class="header__bag-summ-text">ДО СПЛАТИ:</span>
+                                <span class="header__bag-summ-price">221.00 UAH</span>
+                            </div>
+                            <a href="#" class="btn header__bag-btn">У кошик</a>
+                        </div>
+                        <div class="header__bag-no hidden">
+                            <div class="header__bag-notification">
+                                <i class="icon-bags"></i>
+                                <span>Ваш кошик поки що порожній.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header__search">
+                <form action="">
+                    <input type="search" autocomplete="off" name="search" placeholder="Пошук">
+                    <button type="submit"><i class="icon-search"></i></button>
+                </form>
+                <div class="header__lang">
+                    <span>En <i class="icon-arrow"></i></span>
+                    <ul class="header__lang-list">
+                        <li><a href="#">Uk</a></li>
+                        <li><a href="#">Ru</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="header__nav" class="popup header__nav">
+            <div class="header__nav-top">
+                <div class="popup__close header__nav-close">
+                    <i class="icon-close"></i>
+                </div>
+                <a href="/" class="header__logo">Dadoo</a>
+                <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
+            </div>
+            <ul class="menu">
+                <li><a href="">Головна</a></li>
+                <li class="menu__catalog"><a href="#">КОКТЕЙЛІ</a>
+                    <ul>
+                        <li><a href="#">Червоне</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Montepulciano d'Abruzzo</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">БІЛЕ</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Ігристе</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">КРАЇНА</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ПРИВІД</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu__catalog"><a href="#">Міцне</a>
+                    <ul>
+                        <li><a href="#">ЧЕРВОНЕ</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Montepulciano d'Abruzzo</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">БІЛЕ</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu__catalog"><a href="#">ВИНА</a>
+                    <ul>
+                        <li><a href="#">ЧЕРВОНЕ</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Montepulciano d'Abruzzo</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">БІЛЕ</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Ігристе</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">КРАЇНА</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">ПРИВІД</a>
+                            <ul>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                                <li><a href="#">Lambrusco</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="menu__catalog"><a href="#">ЗАКУСКИ</a></li>
+                <li class="menu__catalog"><a href="#">ПОДАРУНКИ</a></li>
+                <li class="menu__catalog"><a href="#">ІНШЕ</a></li>
+                <li class="menu__blog"><a class="menu__has-child" href="#">БЛОГ</a>
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <div class="menu__blog--img">
+                                    <img src="img/demo/blog1.jpg" alt="">
+                                </div>
+                                <span>Чули про рожеве?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="menu__blog--img">
+                                    <img src="img/demo/blog2.jpg" alt="">
+                                </div>
+                                <span>Насичені вечірні коктейлі</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="menu__blog--img">
+                                    <img src="img/demo/blog1.jpg" alt="">
+                                </div>
+                                <span>Чули про рожеве?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="menu__blog--img">
+                                    <img src="img/demo/blog1.jpg" alt="">
+                                </div>
+                                <span>Насичені вечірні коктейлі</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="menu__blog--img">
+                                    <img src="img/demo/blog1.jpg" alt="">
+                                </div>
+                                <span>Чули про рожеве?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="menu__blog--img">
+                                    <img src="img/demo/blog1.jpg" alt="">
+                                </div>
+                                <span>Чули про рожеве?</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="menu__blog--img">
+                                    <img src="img/demo/blog2.jpg" alt="">
+                                </div>
+                                <span>Насичені вечірні коктейлі</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <div class="menu__blog--img">
+                                    <img src="img/demo/blog1.jpg" alt="">
+                                </div>
+                                <span>Чули про рожеве?</span>
+                            </a>
+                        </li>
+                        <li class="menu__blog-all">
+                            <a href="#">Дивитись все</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <!--  -->
+        <!-- <div id="header__message" class="popup header__message">
+            <div class="header__popup-top">
+                <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ</span>
+                <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
+            </div>
+            <div class="header__message-content">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
+            </div>
+        </div>
+        <div id="header__message" class="popup header__message">
+            <div class="header__popup-top">
+                <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ</span>
+                <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
+            </div>
+            <div class="header__message-content">
+                2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
+            </div>
+        </div> -->
+    </header>
+    <main class="main main--page">
+        <div class="category">
+            <h1 class="page-title">Червоне</h1>
+            <div class="page-desc">
+                <div class="page-desc__content">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada. Duis et scelerisque urna, at sodales justo. Sed blandit orci elit, non rhoncus felis semper ut. Mauris sollicitudin, dui nec imperdiet commodo, nisi ligula hendrerit felis, consequat malesuada erat dui quis diam. Quisque scelerisque augue id eros pulvinar, non porttitor quam pharetra. Aliquam imperdiet est turpis, vitae rutrum mi iaculis eget. Integer luctus, justo ultrices molestie suscipit, ante nibh ullamcorper nisi, nec varius mauris nunc non justo. Nulla vel aliquet libero.
+                    </p>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada. Duis et scelerisque urna, at sodales justo. Sed blandit orci elit, non rhoncus felis semper ut. Mauris sollicitudin, dui nec imperdiet commodo, nisi ligula hendrerit felis, consequat malesuada erat dui quis diam. Quisque scelerisque augue id eros pulvinar, non porttitor quam pharetra. Aliquam imperdiet est turpis, vitae rutrum mi iaculis eget. Integer luctus, justo ultrices molestie suscipit, ante nibh ullamcorper nisi, nec varius mauris nunc non justo. Nulla vel aliquet libero.
+                    </p>
+                </div>
+                <div class="page-desc__btn">
+                    <div class="page-desc__btn-item page-desc__btn-show">Показати все <i class="icon-arrow"></i></div>
+                    <div class="page-desc__btn-item page-desc__btn-hide">Cховати<i class="icon-arrow"></i></div>
+                </div>
+            </div>
+            <div class="category__wrapper">
+                <div class="category__filter">
+                    <div class="category__filter-header">
+                        <span>Фільтри</span>
+                        <a href="#">Видалити фільтри</a>
+                    </div>
+                </div>
+                <div class="category__list">
+                    <div class="category__list-header">
+                        <a href="#" class="category__list-filter">Фільтри</a>
+                        <div class="category__list-summ-products">241 товар(a)</div>
+                        <div data-link="category__sort" class="popup__open category__list-sort category__list-sort--mob">
+                            <span>Сортувати по:</span>
+                            <div class="category__list-sort-picked"><span>Популярності</span> <i class="icon-arrow"></i></div>
+                        </div>
+                        <div id="category__sort" class="popup category__list-sort-popup">
+                            <div class="header__popup-top">
+                                <div class="popup__close header__popup-close"><i class="icon-close"></i></div>
+                                <span class="header__popup-title">Сортувати</span>
+                            </div>
+                            <ul class="header__account-list category__list-sort-links">
+                                <li><a class="popup__close" href="#">Популярності</a></li>
+                                <li><a class="popup__close" href="#">Від дешевих до дорогих</a></li>
+                                <li><a class="popup__close" href="#">Від дорогих до дешевих</a></li>
+                                <li><a class="popup__close" href="#">Акційні</a></li>
+                            </ul>
+                        </div>
+                        <div class="category__list-sort category__list-sort--pk">
+                            <span>Сортувати по:</span>
+                            <div class="category__list-sort-picked"><span>Популярності</span> <i class="icon-arrow"></i></div>
+                            <ul class="category__list-sort-links">
+                                <li><a href="#">Популярності</a></li>
+                                <li><a href="#">Від дешевих до дорогих</a></li>
+                                <li><a href="#">Від дорогих до дешевих</a></li>
+                                <li><a href="#">Акційні</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="category__products">
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="category__article">
+                            <a href="#" class="article-block__content">
+                                <div class="img-bg article-block__img">
+                                    <img src="img/demo/blog3.jpg" alt="">
+                                </div>
+                                <span class="article-block__text">
+                                    <h2>Насичені вечірні коктейлі</h2>
+                                    <p>Як зробити, та коли подати...</p>
+                                </span>
+                                <span class="article-block__view">
+                                    <i class="icon-eye"></i>
+                                    <span>19900</span>
+                                </span>
+                            </a>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="product product--category">
+                            <div class="product__wish">
+                                <i class="icon-heart"></i>
+                                <i class="icon-heart-full hidden"></i>
+                            </div>
+                            <div class="product__sticker-list">
+                                <!-- <div class="product__sticker-item product__sticker-item--gift">
+                                                            <i class="icon-gift"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--percent">
+                                                            <i class="icon-percent"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--popular">
+                                                            <i class="icon-popular"></i>
+                                                        </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--fish">
+                                    <i class="icon-fish"></i>
+                                </div> -->
+                                <!-- <div class="product__sticker-item product__sticker-item--meat">
+                                                            <i class="icon-meat"></i>
+                                                        </div> -->
+                            </div>
+                            <a href="#" class="product__img">
+                                <img src="img/demo/hamon.jpg" alt="">
+                            </a>
+                            <div class="product__content">
+                                <a href="#" class="product__title">MAROTTI CAMPI</a>
+                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <div class="product__price">
+                                    <span>110.50 UAH</span>
+                                </div>
+                                <div class="product__special hidden">
+                                    <span class="product__special-old">110.50 UAH</span>
+                                    <span class="product__special-new">90.00 UAH</span>
+                                </div>
+                                <div class="product__actions">
+                                    <!-- При клике на "добваить в коризину" для наглядности вызова выбора количества сделал функцию "showQuantity" в main.js -->
+                                    <a href="#" class="btn product__buy">У кошик</a>
+                                    <a href="#" class="btn product__not-in-stock hidden">ЗАРАЗ ВІДСУТНЄ</a>
+                                    <div class="product__number">
+                                        <div class="product__number-wrapper">
+                                            <span class="product__number-minus icon-minus"></span>
+                                            <input readonly="" type="text" value="1" />
+                                            <span class="product__number-plus icon-plus"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__top">
+            <div class="container container--footer">
+                <div class="footer__logo">
+                    <a href="">Dadoo</a>
+                    <span>Магазин кращого вибору</span>
+                </div>
+                <div class="footer__cards">
+                    <img src="img/logovisa.png" width="39" height="35" alt="">
+                    <img src="img/mastercard.png" width="30" height="24" alt="">
+                </div>
+                <div class="footer__up"><i class="icon-arrow"></i></div>
+                <div class="footer__nav">
+                    <ul>
+                        <li>
+                            <span>ДОПОМОГА<i class="icon-arrow"></i></span>
+                            <ul>
+                                <li><a href="#">Питання та відповіді</a></li>
+                                <li><a href="#">Доставка та оплата</a></li>
+                                <li><a href="#">Повернення</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>ІНФОРМАЦІЯ<i class="icon-arrow"></i></span>
+                            <ul>
+                                <li><a href="#">Про нас</a></li>
+                                <li><a href="#">Партнерам</a></li>
+                                <li><a href="#">Умови використання</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <span>КОНТАКТИ<i class="icon-arrow"></i></span>
+                            <ul>
+                                <li><a href="tel:+38(093)231-92-23">+38(093)231-92-23</a></li>
+                                <li><a class="footer__email" href="mailto:Dadoo@info.com">Dadoo@info.com</a></li>
+                                <li><a>Працюємо з 10:00 до 22:00</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container container--footer">
+                <div class="footer__cards">
+                    <img src="img/logovisa.png" width="39" height="35" alt="">
+                    <img src="img/mastercard.png" width="30" height="24" alt="">
+                </div>
+                <div class="footer__soc">
+                    <span>Підписуйтесь:</span>
+                    <ul>
+                        <li><a target="_blank" class="icon-instagram" href="#"></a></li>
+                        <li><a target="_blank" class="icon-youtube" href="#"></a></li>
+                        <li><a target="_blank" class="icon-fb" href="#"></a></li>
+                    </ul>
+                </div>
+                <a target="_blank" href="#" class="footer__dev">
+                    <span>Розробка магазину:</span>
+                    <img src="img/resense_logo.svg" width="67" alt="">
+                </a>
+            </div>
+        </div>
+        <div class="footer__cop">
+            <div class="container container--footer">
+                <span>© Усі права захищені "Даду" 2020</span>
+            </div>
+        </div>
+    </footer>
+    <!-- ВАЖНО! Блок "#login" должен убираться с DOM дерева если пользователь залогинен -->
+    <div id="login" class="popup login">
+        <div class="header__nav-top">
+            <div class="popup__close header__nav-close">
+                <i class="icon-close"></i>
+            </div>
+            <a href="/" class="header__logo">Dadoo</a>
+            <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
+        </div>
+        <div id="login__enter" class="popup popup--no-header login__enter">
+            <div class="header__popup-top">
+                <span class="header__popup-title">Вхід</span>
+                <div class="popup__close header__popup-close"><i class="icon-close"></i></div>
+            </div>
+            <div class="login__form">
+                <form action="">
+                    <div class="input input--error">
+                        <label for="email-enter">E-mail</label>
+                        <input id="email-enter" type="email" name="">
+                        <span class="input__verified">Введіть данні вірно</span>
+                    </div>
+                    <div class="input">
+                        <label for="password-enter">Пароль</label>
+                        <input id="password-enter" type="password" name="">
+                        <span class="input__verified">Введіть данні вірно</span>
+                    </div>
+                    <div class="login__form-links">
+                        <div class="login__form-remember">
+                            <label>
+                                <input type="checkbox" name="">
+                                <span class="icon-verified"></span>Запам'ятати мене
+                            </label>
+                        </div>
+                        <a href="#" data-link="login__forgot" class="popup__open popup__close-enter login__form-forgot">Забули пароль?</a>
+                    </div>
+                    <input type="submit" class="btn" value="Увійти">
+                </form>
+            </div>
+            <div class="login__links">
+                <a data-link="login__register" class="popup__open popup__close-enter red-link" href="#">Зареєструватися</a>
+                <a class="login__links-btn login__links-fb">
+                    <svg>
+                        <use xlink:href="img/iconSprite.svg#facebook"></use>
+                    </svg>
+                    Вхід через Facebook
+                </a>
+                <a class="login__links-btn login__links-google">
+                    <svg>
+                        <use xlink:href="img/iconSprite.svg#google"></use>
+                    </svg>
+                    Вхід через Google
+                </a>
+            </div>
+        </div>
+        <div id="login__register" class="popup popup--no-header login__register">
+            <div class="header__popup-top">
+                <span class="header__popup-title">Реєстрація</span>
+                <div class="popup__close header__popup-close"><i class="icon-close"></i></div>
+            </div>
+            <div class="login__form">
+                <form action="">
+                    <div class="input">
+                        <label for="name-register">Ім'я</label>
+                        <input id="name-register" type="text" name="">
+                        <span class="input__verified">Введіть данні вірно</span>
+                    </div>
+                    <div class="input">
+                        <label for="email-register">E-mail</label>
+                        <input id="email-register" type="email" name="">
+                        <span class="input__verified">Введіть данні вірно</span>
+                    </div>
+                    <div class="input input--error">
+                        <label for="password-register">Придумайте пароль</label>
+                        <input id="password-register" type="password" name="">
+                        <span class="input__verified">Введіть данні вірно</span>
+                    </div>
+                    <p class="login__password-text">Пароль повинен складатися з не менш ніж 6 символів, містити цифри та латинські літери, у тому числі великі, і не повинен збігатися з ім'ям та ел. поштою</p>
+                    <input type="submit" class="btn" value="Зареєструватися">
+                </form>
+            </div>
+            <div class="login__links">
+                <a class="login__close-this" href="#">Я вже зареєстрований</a>
+                <a class="login__links-btn login__links-fb">
+                    <svg>
+                        <use xlink:href="img/iconSprite.svg#facebook"></use>
+                    </svg>
+                    Вхід через Facebook
+                </a>
+                <a class="login__links-btn login__links-google">
+                    <svg>
+                        <use xlink:href="img/iconSprite.svg#google"></use>
+                    </svg>
+                    Вхід через Google
+                </a>
+            </div>
+        </div>
+        <div id="login__forgot" class="popup popup--no-header login__forgot">
+            <div class="header__popup-top">
+                <span class="header__popup-title">Нагадати пароль</span>
+                <div class="popup__close header__popup-close"><i class="icon-close"></i></div>
+            </div>
+            <!-- ПРИ ПРАВИЛЬНОМ ВВОДЕ ЕМЕЙЛА ДОЛЖНА ВЫЗЫВАТЬСЯ ФУНКЦИЯ "loginForgotSuccess" -->
+            <div class="login__form">
+                <form action="">
+                    <div class="input">
+                        <label for="email-forgot">E-mail</label>
+                        <input id="email-forgot" type="email" name="">
+                        <span class="input__verified">Введіть данні вірно</span>
+                    </div>
+                    <input onclick="loginForgotSuccess()" type="submit" class="btn" value="Отримати пароль">
+                </form>
+            </div>
+            <!--  -->
+            <div class="login__links">
+                <a class="login__close-this" href="#">Я згадав пароль</a>
+                <a class="login__links-btn login__links-fb">
+                    <svg>
+                        <use xlink:href="img/iconSprite.svg#facebook"></use>
+                    </svg>
+                    Вхід через Facebook
+                </a>
+                <a class="login__links-btn login__links-google">
+                    <svg>
+                        <use xlink:href="img/iconSprite.svg#google"></use>
+                    </svg>
+                    Вхід через Google
+                </a>
+            </div>
+            <div class="login__forgot-success">
+                <div class="login__forgot-success-wrapper">
+                    <i class="icon-success"></i>
+                    <p>Ми вислали вам інструкцію по відновленню паролю</p>
+                    <a class="popup__close" href="#">Повернутися на сайт</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  -->
+    <div id="lang-popup" class="popup popup--no-header lang-popup">
+        <ul class="header__account-list lang-popup__list">
+            <li><a href="#">Українська мова</a></li>
+            <li><a href="#">Російська мова</a></li>
+        </ul>
+    </div>
+    <!-- <div id="how-old" class="popup how-old">
+        <div class="header__nav-top">
+            <div class="popup__close header__nav-close">
+                <i class="icon-close"></i>
+            </div>
+            <a href="/" class="header__logo">Dadoo</a>
+            <div data-link="lang-popup" class="popup__open header__nav-lang">EN</div>
+        </div>
+        <div id="how-old__ask" class="popup popup--no-header how-old__ask">
+            <div class="how-old__desc">Ласкаво просимо на сайт компанії "Даду"</div>
+            <div class="how-old__title">ВАМ ВЖЕ ВИПОВНИЛОСЯ 18 РОКІВ?</div>
+            <div class="how-old__btns">
+                <a onclick="oldYes()" class="btn how-old__yes" href="#">Так</a>
+                <a onclick="oldNo()" data-link="how-old__sorry" class="popup__open btn how-old__no" href="#">Ні</a>
+            </div>
+            <div class="how-old__agree">
+                Починаючи використовувати сайт я підтверджую,<br>
+                що досяг віку 18 років і<br>
+                приймаю <a target="_blank" href="#">політику конфіденційності</a>.</div>
+        </div>
+        <div id="how-old__sorry" class="popup popup--no-header how-old__sorry">
+            <div class="how-old__desc">Нажаль ми не продаємо алкогольну продукцію особам молодше 18 років.</div>
+            <div class="how-old__title">ДЯКУЄМО ЗА ЧЕСНУ ВІДПОВІДЬ!</div>
+            <div class="how-old__btns">
+                <a onclick="window.history.back()" class="btn how-old__back" href="#">Назад</a>
+            </div>
+        </div>
+    </div> -->
+    
+    <div class="overlay"></div>
+    <div class="overlay2"></div>
+    <!-- <div class="overlay--how-old open"></div> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

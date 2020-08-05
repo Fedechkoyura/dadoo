@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<modification>
+	<name>Admin search+</name>
+    <version>1.1</version>
+    <code>Admin search+</code>
+    <author>Otvet</author>
+	       
+	<file path="admin/model/catalog/product.php">
+		<operation>
+		<search><![CDATA[
+			$sql .= " AND pd.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+		]]></search>
+		<add position="replace"><![CDATA[
+			$sql .= " AND pd.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+		]]></add>
+		</operation>
+	</file>
+	<file path="admin/model/catalog/product.php">
+		<operation>
+		<search><![CDATA[
+			$sql .= " AND cd2.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+		]]></search>
+		<add position="replace"><![CDATA[
+			$sql .= " AND cd2.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+		]]></add>
+		</operation>
+	</file>
+	<file path="admin/model/catalog/option.php">
+		<operation>
+		<search><![CDATA[
+			$sql .= " AND od.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+		]]></search>
+		<add position="replace"><![CDATA[
+			$sql .= " AND od.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+		]]></add>
+		</operation>
+	</file>
+	<file path="admin/model/catalog/attribute.php">
+		<operation>
+		<search><![CDATA[
+			$sql .= " AND ad.name LIKE '" . $this->db->escape($data['filter_name']) . "%'";
+		]]></search>
+		<add position="replace"><![CDATA[
+			$sql .= " AND ad.name LIKE '%" . $this->db->escape($data['filter_name']) . "%'";
+		]]></add>
+		</operation>
+	</file>
+	
+	<file path="admin/view/template/catalog/product_list.tpl">
+		<operation>
+		<search><![CDATA[
+			<?php echo $footer; ?>
+		]]></search>
+		<add position="before"><![CDATA[
+			<script>
+			$('.form-control').keypress(function(e) {
+				if(e.which == 13) {
+					jQuery(this).blur();
+					jQuery('#button-filter').focus().click();
+				}
+			});
+			</script>
+		]]></add>
+		</operation>
+	</file>
+</modification>

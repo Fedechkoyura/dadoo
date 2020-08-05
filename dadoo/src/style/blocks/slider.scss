@@ -30,10 +30,11 @@
         width: 100%;
         max-width: 400px;
         h1 {
-            font-size: 1.4em;
+            font-size: 1.5em;
             line-height: 1.2;
             margin-bottom: 6px;
             text-transform: uppercase;
+            /* font-family: $mullerB; */
         }
         p {
             margin: 0;
@@ -56,10 +57,11 @@
     .slider {
         height: 31.4vw;
         max-height: 60%;
+        margin-bottom: 4px;
         &__content {
             max-width: 470px;
             h1 {
-                font-size: 2.65em;
+                font-size: 2.95em;
                 margin-bottom: 11px;
             }
             p {

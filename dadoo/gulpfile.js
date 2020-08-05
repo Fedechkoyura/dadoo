@@ -52,9 +52,9 @@ gulp.task('js:build', function () {
         .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         .pipe(reload({stream: true})) //И перезагрузим сервер
         // .pipe(babel())
-        .pipe(uglify())
-        .pipe(rename('main.min.js'))
-        .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
+        // .pipe(uglify())
+        // .pipe(rename('main.min.js'))
+        // .pipe(gulp.dest(path.build.js)) //Выплюнем готовый файл в build
         // .pipe(reload({stream: true})); 
 });
 
