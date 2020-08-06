@@ -45,7 +45,8 @@
             font-size: 1.2em;
         }
     }
-    &__view {
+    &__view,
+    &__date {
         position: absolute;
         z-index: 2;
         top: 11px;
@@ -66,6 +67,18 @@
     &__products {
         display: flex;
         flex-direction: column;
+    }
+    &__date{
+        top: auto;
+        bottom: 11px;
+    }
+    .blog & {
+        margin-left: 0;
+        margin-right: 0;
+        margin-bottom: 30px;
+        &:last-of-type{
+            margin-bottom: 0;
+        }
     }
 }
 @media (min-width:768px) {
@@ -122,6 +135,10 @@
             span{
                 font-size: 0.9em;
             }
+        }
+        &__date{
+            right: 27px;
+            bottom: 23px;
         }
         &__products{
             width: calc(50% - 8px);

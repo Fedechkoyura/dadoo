@@ -195,7 +195,7 @@ $(document).ready(function() {
     let textHeightSmall;
     function setSmallHeight(){
         if (windowWidth < 768) {
-            textHeightSmall = '124px';
+            textHeightSmall = '120px';
         } else if (windowWidth < 1280) {
             textHeightSmall = '144px';
         } else if (windowWidth < 1900) {

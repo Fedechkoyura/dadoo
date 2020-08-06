@@ -1,0 +1,106 @@
+.blog {
+    padding-bottom: 40px;
+}
+.blog-single {
+    section {
+        font-size: 1.2em;
+    }
+    &__view {
+        display: none;
+    }
+    &__content {
+        padding: 0 16px 25px;
+    }
+    .slider--blog{
+    	margin-bottom: 23px;
+    }
+    .category__list-summ-products--blog{
+    	display: flex;
+    	align-items: center;
+    	width: 50%;
+    	height: 50px;
+    	padding-left: 9%;
+    }
+    .category__list--blog{
+    	margin-bottom: 10px;
+    }
+}
+@media (min-width:768px) {
+    .blog-single {
+    	.slider--blog,&__content{
+        	margin: 0 14px;
+    	}
+        &__content {
+            padding-left: 1px;
+            padding-right: 1px;
+        }
+    }
+}
+@media (min-width:1024px) {
+    .blog-single {
+        .article-block__view {
+            display: none;
+        }
+        .slider--blog,&__content{
+        	margin: 0 4%;
+    	}
+        &__view {
+            z-index: 2;
+            color: rgba(0, 0, 0, 0.3);
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            i {
+                font-size: 1.7em;
+                margin-right: 12px;
+                position: relative;
+                top: -0.5px;
+            }
+            span {
+                font-size: 0.8em;
+            }
+        }
+        .category__list--blog{
+        	width: 100%;
+        }
+        .category__list-header--blog{
+        	padding: 0 4%;
+        }
+        .category__list-summ-products--blog{
+        	padding-left: 0;
+        }
+        .category__products--blog{
+        	padding-left: 15px;
+        	margin-bottom: 0;
+        }
+    }
+}
+@media (min-width:1024px){
+	.blog-single{
+		.category__list--blog{
+			margin-bottom: 0;
+		}
+	}
+}
+@media (min-width:1280px){
+	.blog-single{
+		.slider--blog,&__content{
+        	margin: 0 10.2% 0 0;
+        	padding: 0 0 0 18px;
+    	}
+    	&__content{
+    		margin-bottom: 25px;
+    	}
+		&__view{
+            span{
+                font-size: 0.9em;
+            }
+        }
+        .category__list-header--blog{
+        	padding: 0 10.2% 0 20px;
+        }
+        .category__products--blog{
+        	padding-left: 1.3%;
+        }
+	}
+}
