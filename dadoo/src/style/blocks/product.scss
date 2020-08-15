@@ -66,18 +66,23 @@
             }
             &--gift {
                 background: #A55BF9;
+                color: #A55BF9;
             }
             &--popular {
                 background: #EAB930;
+                color: #EAB930;
             }
             &--percent {
                 background: #F22727;
+                color: #F22727;
             }
             &--fish {
                 background: #FF7417;
+                color: #FF7417;
             }
             &--meat {
                 background: rgba(255, 49, 49, 0.66);
+                color: rgba(255, 49, 49, 0.66);
             }
             i {
                 position: relative;
@@ -96,6 +101,19 @@
                 &.icon-meat {
                     font-size: 9px;
                 }
+            }
+            &-text{
+                display: none;
+                position: absolute;
+                top: 110%;
+                left: 50%;
+                transform: translateX(-50%);
+                font-size: 0.7em;
+                text-align: center;
+                font-family: $robotoR;
+                opacity: 0;
+                visibility: hidden;
+                transition: all .1s ease-in-out;
             }
         }
     }
@@ -180,12 +198,6 @@
             font-size: 0.9em;
             padding-left: 1px;
             padding-top: 1.5px;
-        }
-        &-plus {
-            color: #FFF;
-            background: $red;
-        }
-        &-minus {
             border: 1px solid #FFCFCF;
             color: $red;
         }
@@ -281,7 +293,7 @@
             top: 7px;
             i {
                 font-size: 14px;
-                transition: all .3s ease-in-out;
+                transition: all .1s ease-in-out;
                 &.hidden {
                     display: flex !important;
                     opacity: 0;
@@ -317,12 +329,15 @@
                         font-size: 15px;
                     }
                 }
-            }
-        }
-        &__img {
-            transition: all .3s ease-in-out;
-            &:hover {
-                opacity: 0.8;
+                &-text{
+                    display: block;
+                }
+                &:hover{
+                    .product__sticker-item-text{
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
             }
         }
         &__actions {
@@ -342,32 +357,24 @@
         &__number {
             span {
                 cursor: pointer;
-                transition: all .3s ease-in-out;
-            }
-            &-plus {
-                border: 1px solid $red;
+                transition: all .1s ease-in-out;
                 &:hover {
-                    background: none;
-                    color: $red;
-                }
-            }
-            &-minus {
-                &:hover {
-                    border-color: $red;
+                    background: $red;
+                    color: #FFF;
                 }
             }
         }
         &__title {
             margin-bottom: 9px;
-            transition: all .3s ease-in-out;
+            transition: all .1s ease-in-out;
             &:hover {
-                color: $red;
+                opacity: 0.7;
             }
         }
         &__desc {
-            transition: all .3s ease-in-out;
+            transition: all .1s ease-in-out;
             &:hover {
-                color: $red;
+                opacity: 0.7;
             }
         }
         &--article-block {
@@ -442,7 +449,11 @@
         }
         &__buy,
         &__not-in-stock {
+            min-height: inherit;
+            height: 36px;
             font-size: 1em;
+            padding-top: 3px;
+            padding-bottom: 0;
         }
         &--article-block {
             .product {
@@ -473,6 +484,10 @@
     .product {
         &__img {
             height: 210px;
+        }
+        &__buy,
+        &__not-in-stock{
+            height: 45px;
         }
         &__title,
         &__desc {

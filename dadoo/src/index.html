@@ -12,6 +12,8 @@
     <title>Dadoo</title>
     <!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -48,6 +50,7 @@
                             </div> -->
                             <div class="product__sticker-item product__sticker-item--fish">
                                 <i class="icon-fish"></i>
+                                <span class="product__sticker-item-text">Гарно поєднується з рибою</span>
                             </div>
                             <!-- <div class="product__sticker-item product__sticker-item--meat">
                                 <i class="icon-meat"></i>
@@ -88,6 +91,7 @@
                         <div class="product__sticker-list">
                             <div class="product__sticker-item product__sticker-item--gift">
                                 <i class="icon-gift"></i>
+                                <span class="product__sticker-item-text">Приємна знижка</span>
                             </div>
                             <!-- <div class="product__sticker-item product__sticker-item--percent">
                                 <i class="icon-percent"></i>
@@ -100,6 +104,7 @@
                             </div> -->
                             <div class="product__sticker-item product__sticker-item--meat">
                                 <i class="icon-meat"></i>
+                                <span class="product__sticker-item-text">Гарно поєднується з м'ясом</span>
                             </div>
                         </div>
                         <a href="#" class="product__img">
@@ -161,9 +166,11 @@
                         <div class="product__sticker-list">
                             <div class="product__sticker-item product__sticker-item--gift">
                                 <i class="icon-gift"></i>
+                                <span class="product__sticker-item-text">Гарний вибір на подарунок</span>
                             </div>
                             <div class="product__sticker-item product__sticker-item--percent">
                                 <i class="icon-percent"></i>
+                                <span class="product__sticker-item-text">Приємна знижка</span>
                             </div>
                             <!-- <div class="product__sticker-item product__sticker-item--popular">
                                 <i class="icon-popular"></i>
@@ -325,12 +332,16 @@
         slidesPerView: 'auto',
         spaceBetween: 4,
         freeMode: true,
+        autoplay: {
+            delay: 2000,
+        },
         navigation: {
             prevEl: '.popular--drink .popular__arrow-prev',
             nextEl: '.popular--drink .popular__arrow-next',
         },
         breakpoints: {
             1024: {
+                autoplay: false,
                 slidesPerView: 5,
                 spaceBetween: 4
             },
@@ -340,12 +351,16 @@
         slidesPerView: 'auto',
         spaceBetween: 4,
         freeMode: true,
+        autoplay: {
+            delay: 2000,
+        },
         navigation: {
             prevEl: '.popular--eat .popular__arrow-prev',
             nextEl: '.popular--eat .popular__arrow-next',
         },
         breakpoints: {
             1024: {
+                autoplay: false,
                 slidesPerView: 5,
                 spaceBetween: 4
             },

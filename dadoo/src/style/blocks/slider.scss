@@ -51,6 +51,16 @@
 @media (min-width:1024px){
 	.slider{
 		height: 32.4vw;
+        &__content{
+            h1,p{
+                transition: all .1s ease-in-out;
+            }
+            &:hover{
+                h1,p{
+                    color: #E7E6E6;
+                }
+            }
+        }
 	}
 }
 @media (min-width:1280px) {

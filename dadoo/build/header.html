@@ -6,7 +6,7 @@
         <a href="/" class="header__logo">Dadoo</a>
         <div class="header__icons">
             <!-- Меняется класс "hidden" в зависимости зашел ли пользователь в свой аккаунт или убирается с DOM дерева -->
-            <div data-link="header__account" class="popup__open2 header__icons-link">
+            <div data-link="header__account" class="popup__open2 header__icons-link hidden">
                 <i class="icon-user"></i>
                 <!-- ВАЖНО! Блок "#header__account" должен убираться с DOM дерева если пользователь НЕ залогинен -->
                 <div id="header__account" class="popup header__account">
@@ -29,7 +29,7 @@
                     </ul>
                 </div>
             </div>
-            <a data-link="login" class="popup__open header__icons-link hidden"><i class="icon-user"></i></a>
+            <a data-link="login" class="popup__open header__icons-link"><i class="icon-user"></i></a>
             <!--  -->
             <a href="#" class="header__icons-link">
                 <!-- Меняется в зависимости есть ли товары в избранном -->
@@ -124,7 +124,8 @@
         </div>
         <ul class="menu">
             <li><a href="">Головна</a></li>
-            <li class="menu__catalog"><a href="#">КОКТЕЙЛІ</a>
+            <li class="menu__catalog">
+                <a href="#">КОКТЕЙЛІ</a>
                 <ul>
                     <li><a href="#">Червоне</a>
                         <ul>

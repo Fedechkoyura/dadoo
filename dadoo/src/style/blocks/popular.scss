@@ -37,7 +37,7 @@
 				top: calc(50% + 15px);
 				font-size: 9px;
 				outline: none;
-				transition: all .3s ease-in-out;
+				transition: all .1s ease-in-out;
 				cursor: pointer;
 				&.swiper-button-disabled{
 					opacity: 0;
@@ -56,10 +56,30 @@
 				transform: translateY(-50%) rotate(-90deg);
 			}
 		}
+		&--product{
+			padding: 0 4%;
+			margin-bottom: 25px;
+			.popular__arrow-prev{
+				left: 0;
+			}
+			.popular__arrow-next{
+				right: 0;
+			}
+		}
 	}
 	@media (min-width:1280px){
 		&__title{
 			margin: 34px 0 30px;
+		}
+		&--product{
+			padding: 0;
+			margin: 0 10.2% 25px;
+			.popular__arrow-prev{
+				left: -40px;
+			}
+			.popular__arrow-next{
+				right: -40px;
+			}
 		}
 	}
 }

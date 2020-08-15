@@ -4,7 +4,24 @@
         display: none;
     }
     &__enter {
+        visibility: hidden;
         transform: none !important;
+    }
+    &.open{
+        .login__enter{
+            visibility: visible;
+        }
+    }
+    &__register,
+    &__forgot{
+        opacity: 0;
+        visibility: hidden;
+        transform: none !important;
+        transition: all .5s ease-in-out;
+        &.open{
+            opacity: 1;
+            visibility: visible;
+        }
     }
     &__form {
         padding: 22px 8px 0;
@@ -33,14 +50,14 @@
                 align-items: center;
                 margin-right: 9px;
                 font-size: 1.1em;
-                transition: all .3s ease-in-out;
+                /* transition: all .1s ease-in-out; */
                 &::before {
                     color: $red;
                     font-size: 7px;
                     position: relative;
                     top: 0.5px;
                     left: .5px;
-                    transition: all .3s ease-in-out;
+                    /* transition: all .1s ease-in-out; */
                     opacity: 0;
                 }
             }
@@ -135,7 +152,7 @@
         /* position: relative; */
         &-success {
             height: calc(100% - 100px);
-            transition: all .3s ease-in-out;
+            transition: all .1s ease-in-out;
             position: absolute;
             top: 0;
             left: 0;
@@ -178,7 +195,7 @@
 
 @media (min-width:1024px) {
     .login {
-        width: 510px;
+        width: 515px;
         height: 100vh;
         left: 50%;
         right: auto;
@@ -187,7 +204,7 @@
         z-index: 21;
         opacity: 0;
         visibility: hidden;
-        transition: all .3s ease-in-out;
+        transition: all .1s ease-in-out;
         background: transparent;
         overflow: visible;
         border: none;
@@ -200,7 +217,9 @@
         .header__popup-close {
             display: flex;
         }
-        .login__enter {
+        .login__enter,
+        .login__register,
+        .login__forgot {
             transform: translateY(-50%) !important;
         }
         &.open {
@@ -215,7 +234,7 @@
             }
         }
         &__form {
-            padding: 35px 115px 0;
+            padding: 35px 112px 0;
             .input {
                 margin-left: 0;
                 margin-right: 0;
@@ -261,7 +280,7 @@
                 font-size: 0.9em;
                 cursor: pointer;
                 font-family: $robotoR;
-                transition: all .3s ease-in-out;
+                transition: all .1s ease-in-out;
                 &:first-of-type {
                     &:hover {
                         text-decoration: none;
@@ -272,7 +291,7 @@
                 border: 1px solid #1B66CA;
                 svg {
                     fill: #fff;
-                    transition: all .3s ease-in-out;
+                    transition: all .1s ease-in-out;
                 }
                 &:hover {
                     background: transparent;
@@ -286,7 +305,7 @@
             &-google {
                 margin-bottom: 0;
                 border: 1px solid #F2F2F2;
-                transition: all .3s ease-in-out;
+                transition: all .1s ease-in-out;
                 &:hover {
                     border-color: #AFAFAF;
                     background: transparent;

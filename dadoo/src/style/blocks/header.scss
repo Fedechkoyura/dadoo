@@ -10,6 +10,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        border-bottom: 1px solid #F1F1F1;
     }
     &__menu,
     &__icons {
@@ -74,7 +75,7 @@
                 border: 1px solid transparent;
                 transition: all .3s ease-in-out;
                 &:focus {
-                    border-color: #999;
+                    border-color: #e4e4e4;
                 }
             }
             input[type="search"]::-webkit-search-decoration,
@@ -357,7 +358,6 @@
             align-items: center;
             justify-content: space-between;
             padding: 8px 4%;
-            border-bottom: 1px solid #F1F1F1;
             background: #fff;
         }
         &__search {
@@ -373,7 +373,7 @@
                 input {
                     font-size: 0.9em;
                     &:hover {
-                        border-color: #999;
+                        border-color: #e4e4e4;
                     }
                 }
                 button {
@@ -448,10 +448,6 @@
             order: -2;
             margin: 0;
             margin-left: 25px;
-            transition: all .3s ease-in-out;
-            &:hover {
-                opacity: 0.5;
-            }
         }
         &__menu {
             display: none;
@@ -610,8 +606,10 @@
                 }
             }
             &-btn {
+                border: 1px solid #63DF36;
                 &:hover {
-                    background: $red;
+                    color: #484848;
+                    background: none;
                 }
             }
         }

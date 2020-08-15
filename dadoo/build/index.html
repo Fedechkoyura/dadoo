@@ -12,6 +12,8 @@
     <title>Dadoo</title>
     <!-- Custom styles for this template -->
     <link href="css/main.css" rel="stylesheet">
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -23,7 +25,7 @@
             <a href="/" class="header__logo">Dadoo</a>
             <div class="header__icons">
                 <!-- Меняется класс "hidden" в зависимости зашел ли пользователь в свой аккаунт или убирается с DOM дерева -->
-                <div data-link="header__account" class="popup__open2 header__icons-link">
+                <div data-link="header__account" class="popup__open2 header__icons-link hidden">
                     <i class="icon-user"></i>
                     <!-- ВАЖНО! Блок "#header__account" должен убираться с DOM дерева если пользователь НЕ залогинен -->
                     <div id="header__account" class="popup header__account">
@@ -46,7 +48,7 @@
                         </ul>
                     </div>
                 </div>
-                <a data-link="login" class="popup__open header__icons-link hidden"><i class="icon-user"></i></a>
+                <a data-link="login" class="popup__open header__icons-link"><i class="icon-user"></i></a>
                 <!--  -->
                 <a href="#" class="header__icons-link">
                     <!-- Меняется в зависимости есть ли товары в избранном -->
@@ -141,7 +143,8 @@
             </div>
             <ul class="menu">
                 <li><a href="">Головна</a></li>
-                <li class="menu__catalog"><a href="#">КОКТЕЙЛІ</a>
+                <li class="menu__catalog">
+                    <a href="#">КОКТЕЙЛІ</a>
                     <ul>
                         <li><a href="#">Червоне</a>
                             <ul>
@@ -473,6 +476,7 @@
                             </div> -->
                             <div class="product__sticker-item product__sticker-item--fish">
                                 <i class="icon-fish"></i>
+                                <span class="product__sticker-item-text">Гарно поєднується з рибою</span>
                             </div>
                             <!-- <div class="product__sticker-item product__sticker-item--meat">
                                 <i class="icon-meat"></i>
@@ -513,6 +517,7 @@
                         <div class="product__sticker-list">
                             <div class="product__sticker-item product__sticker-item--gift">
                                 <i class="icon-gift"></i>
+                                <span class="product__sticker-item-text">Приємна знижка</span>
                             </div>
                             <!-- <div class="product__sticker-item product__sticker-item--percent">
                                 <i class="icon-percent"></i>
@@ -525,6 +530,7 @@
                             </div> -->
                             <div class="product__sticker-item product__sticker-item--meat">
                                 <i class="icon-meat"></i>
+                                <span class="product__sticker-item-text">Гарно поєднується з м'ясом</span>
                             </div>
                         </div>
                         <a href="#" class="product__img">
@@ -576,12 +582,12 @@
                                                         <i class="icon-meat"></i>
                                                     </div> -->
                         </div>
-                        <a href="#" class="product__img">
+                        <a href="product.html" class="product__img">
                             <img src="img/demo/hamon.jpg" alt="">
                         </a>
                         <div class="product__content">
-                            <a href="#" class="product__title">MAROTTI CAMPI</a>
-                            <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                            <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                            <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                             <div class="product__price">
                                 <span>110.50 UAH</span>
                             </div>
@@ -625,12 +631,12 @@
                                                         <i class="icon-meat"></i>
                                                     </div> -->
                         </div>
-                        <a href="#" class="product__img">
+                        <a href="product.html" class="product__img">
                             <img src="img/demo/hamon.jpg" alt="">
                         </a>
                         <div class="product__content">
-                            <a href="#" class="product__title">MAROTTI CAMPI</a>
-                            <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                            <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                            <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                             <div class="product__price">
                                 <span>110.50 UAH</span>
                             </div>
@@ -678,9 +684,11 @@
                         <div class="product__sticker-list">
                             <div class="product__sticker-item product__sticker-item--gift">
                                 <i class="icon-gift"></i>
+                                <span class="product__sticker-item-text">Гарний вибір на подарунок</span>
                             </div>
                             <div class="product__sticker-item product__sticker-item--percent">
                                 <i class="icon-percent"></i>
+                                <span class="product__sticker-item-text">Приємна знижка</span>
                             </div>
                             <!-- <div class="product__sticker-item product__sticker-item--popular">
                                 <i class="icon-popular"></i>
@@ -741,12 +749,12 @@
                                                         <i class="icon-meat"></i>
                                                     </div> -->
                         </div>
-                        <a href="#" class="product__img">
+                        <a href="product.html" class="product__img">
                             <img src="img/demo/hamon.jpg" alt="">
                         </a>
                         <div class="product__content">
-                            <a href="#" class="product__title">MAROTTI CAMPI</a>
-                            <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                            <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                            <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                             <div class="product__price">
                                 <span>110.50 UAH</span>
                             </div>
@@ -797,12 +805,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -846,12 +854,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -895,12 +903,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -944,12 +952,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -993,12 +1001,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -1042,12 +1050,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -1113,12 +1121,12 @@
                                                         <i class="icon-meat"></i>
                                                     </div> -->
                         </div>
-                        <a href="#" class="product__img">
+                        <a href="product.html" class="product__img">
                             <img src="img/demo/hamon.jpg" alt="">
                         </a>
                         <div class="product__content">
-                            <a href="#" class="product__title">MAROTTI CAMPI</a>
-                            <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                            <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                            <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                             <div class="product__price">
                                 <span>110.50 UAH</span>
                             </div>
@@ -1162,12 +1170,12 @@
                                                         <i class="icon-meat"></i>
                                                     </div> -->
                         </div>
-                        <a href="#" class="product__img">
+                        <a href="product.html" class="product__img">
                             <img src="img/demo/hamon.jpg" alt="">
                         </a>
                         <div class="product__content">
-                            <a href="#" class="product__title">MAROTTI CAMPI</a>
-                            <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                            <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                            <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                             <div class="product__price">
                                 <span>110.50 UAH</span>
                             </div>
@@ -1218,12 +1226,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -1267,12 +1275,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -1316,12 +1324,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -1365,12 +1373,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -1414,12 +1422,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -1463,12 +1471,12 @@
                                                             <i class="icon-meat"></i>
                                                         </div> -->
                             </div>
-                            <a href="#" class="product__img">
+                            <a href="product.html" class="product__img">
                                 <img src="img/demo/hamon.jpg" alt="">
                             </a>
                             <div class="product__content">
-                                <a href="#" class="product__title">MAROTTI CAMPI</a>
-                                <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                                <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                                <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                                 <div class="product__price">
                                     <span>110.50 UAH</span>
                                 </div>
@@ -1534,12 +1542,12 @@
                                                         <i class="icon-meat"></i>
                                                     </div> -->
                         </div>
-                        <a href="#" class="product__img">
+                        <a href="product.html" class="product__img">
                             <img src="img/demo/hamon.jpg" alt="">
                         </a>
                         <div class="product__content">
-                            <a href="#" class="product__title">MAROTTI CAMPI</a>
-                            <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                            <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                            <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                             <div class="product__price">
                                 <span>110.50 UAH</span>
                             </div>
@@ -1583,12 +1591,12 @@
                                                         <i class="icon-meat"></i>
                                                     </div> -->
                         </div>
-                        <a href="#" class="product__img">
+                        <a href="product.html" class="product__img">
                             <img src="img/demo/hamon.jpg" alt="">
                         </a>
                         <div class="product__content">
-                            <a href="#" class="product__title">MAROTTI CAMPI</a>
-                            <a href="#" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
+                            <a href="product.html" class="product__title">MAROTTI CAMPI</a>
+                            <a href="product.html" class="product__desc">Lacrima di Morro d’Alba Superiore DOC “Orgiolo” 2018 - Marotti Campi</a>
                             <div class="product__price">
                                 <span>110.50 UAH</span>
                             </div>
@@ -1867,12 +1875,16 @@
         slidesPerView: 'auto',
         spaceBetween: 4,
         freeMode: true,
+        autoplay: {
+            delay: 2000,
+        },
         navigation: {
             prevEl: '.popular--drink .popular__arrow-prev',
             nextEl: '.popular--drink .popular__arrow-next',
         },
         breakpoints: {
             1024: {
+                autoplay: false,
                 slidesPerView: 5,
                 spaceBetween: 4
             },
@@ -1882,12 +1894,16 @@
         slidesPerView: 'auto',
         spaceBetween: 4,
         freeMode: true,
+        autoplay: {
+            delay: 2000,
+        },
         navigation: {
             prevEl: '.popular--eat .popular__arrow-prev',
             nextEl: '.popular--eat .popular__arrow-next',
         },
         breakpoints: {
             1024: {
+                autoplay: false,
                 slidesPerView: 5,
                 spaceBetween: 4
             },

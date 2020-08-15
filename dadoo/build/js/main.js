@@ -19,12 +19,6 @@ function loginForgotSuccess() {
 }
 
 $(document).ready(function() {
-    $("a[href='#']").click(function(event) {
-        event.preventDefault();
-    });
-    $('.footer__up').click(function() {
-        $('html, body').animate({ scrollTop: 0 }, 1000);
-    });
     let windowWidth = window.innerWidth;
     // Function after risize
     function resizeWIndow(myFunc) {
@@ -49,11 +43,23 @@ $(document).ready(function() {
             }
         }
     };
-
+    $("a[href='#']").click(function(event) {
+        event.preventDefault();
+    });
+    // Меню ссылки-якоря (без изминения url)
+    $('.anchor').on('click', function(event) {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({ scrollTop: $(hash).offset().top - 65 }, 900);
+    });
+    // Кнопка наверх
+    $('.footer__up').click(function() {
+        $('html, body').animate({ scrollTop: 0 }, 1000);
+    });
     // DEMO
     $('.product__buy').click(function(event) {
-        $(this).hide();
-        $(this).siblings('.product__number').show();
+        $(this).fadeOut(0);
+        $(this).siblings('.product__number').fadeIn(400);
     });
     // 
 
@@ -161,7 +167,7 @@ $(document).ready(function() {
     // MENU -- END
 
     // INPUT PLUS $ MINUS
-    $('.product__number-minus').click(function(event) {
+    $('.product__number-minus, .cart__number-minus').click(function(event) {
         event.preventDefault();
         let $input = $(this).parent().find('input');
         let count = parseInt($input.val()) - 1;
@@ -170,7 +176,7 @@ $(document).ready(function() {
         $input.change();
         return false;
     });
-    $('.product__number-plus').click(function(event) {
+    $('.product__number-plus, .cart__number-plus').click(function(event) {
         event.preventDefault();
         let $input = $(this).parent().find('input');
         $input.val(parseInt($input.val()) + 1);
@@ -193,7 +199,8 @@ $(document).ready(function() {
 
     // CATEGORY TEXT
     let textHeightSmall;
-    function setSmallHeight(){
+
+    function setSmallHeight() {
         if (windowWidth < 768) {
             textHeightSmall = '120px';
         } else if (windowWidth < 1280) {
@@ -228,4 +235,114 @@ $(document).ready(function() {
         $('.category__list-sort-picked span').text(choosedSort);
     });
     // 
+
+    // Product tabs
+    $('.cart__tabs a').click(function(event) {
+        event.preventDefault();
+        $('.cart__tabs a').not(this).removeClass('active');
+        $(this).addClass('active');
+        var idContent = $(this).attr('href');
+        $('.cart__tabs-item').removeClass('active');
+        $(idContent).addClass('active');
+    });
+
+    // Product Video
+    if ($('.cart__video').length) {
+        var tag = document.createElement('script');
+        tag.src = "https://youtube.com/iframe_api";
+        var firstScriptTag = document.getElementsByTagName('script')[0];
+        firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+        // 3. This function creates an <iframe> (and YouTube player)
+
+        var initPlayer = function(element) {
+            var player = element.querySelector('.cart__video-iframe');
+            var button = element.querySelector('.cart__video-play');
+            var ytplayer = new YT.Player(player, {
+                playerVars: {
+                    'autoplay': 0,
+                    'modestbranding': 1,
+                    'controls': 1,
+                    'rel': 0,
+                    'enablejsapi': 1,
+                    'showinfo': 0,
+                    'host': 'https://www.youtube.com',
+                    'origin': window.location.host
+                },
+                videoId: element.dataset.id
+            });
+
+            button.addEventListener('click', function() {
+                // console.log(ytplayer);
+                // console.log(ytplayer.getPlayerState());
+                ytplayer.playVideo();
+                switch (ytplayer.getPlayerState()) {
+                    case 1:
+                        button.classList.remove('cart__video-play--hidden');
+                        ytplayer.pauseVideo();
+                        break;
+                    default:
+                        button.classList.add('cart__video-play--hidden');
+                        ytplayer.playVideo();
+
+                        break;
+                }
+            });
+
+            var img = element.querySelector(".cart__video-img");
+            img.src = "http://img.youtube.com/vi/" + element.dataset.id + "/0.jpg";
+        };
+
+        var swiper_youtube = new Swiper('.cart__video-list', {
+            slidesPerView: 'auto',
+            spaceBetween: 7,
+            freeMode: true,
+            grabCursor: true,
+            breakpoints: {
+                1024: {
+                    spaceBetween: 19
+                },
+            }
+        }).on('slideChange', function() {
+            var isVideo = swiper_youtube.slides[swiper_youtube.previousIndex].querySelector('.cart__video-container');
+            if (isVideo) {
+                YT.get(isVideo.querySelector('iframe').id).pauseVideo();
+                // console.log(isVideo.querySelector('iframe').id);
+            }
+        });
+
+        window.onYouTubePlayerAPIReady = function() {
+            var container = document.querySelectorAll('.cart__video-container');
+            for (var i = 0; i < container.length; i++) {
+                initPlayer(container[i])
+            }
+        };
+
+        // if ($('.cart__video-list .swiper-slide').length < 2) {
+        //     $('.video-ctrl').hide();
+        // }
+    }
+
+    // Product feedback
+    $('.feedback__desc, .feedback__btn--comment').click(function(event) {
+        $(this).parent().parent().toggleClass('open');
+    });
+    $('.feedback__answ').on('click', function(event) {
+        event.preventDefault();
+        var hash = this.hash;
+        $('html, body').animate({ scrollTop: $(hash).offset().top - 200 }, 900);
+        var name = $(this).parent().siblings('.feedback__name').text();
+        var valueTextareaa = $('.feedback__send').val();
+        $('.feedback__send textarea').val(name + ', ' + valueTextareaa);
+        $('.feedback__send textarea').focus();
+    });
+
+    // Product file upload
+    function fileUpload(input, textblock) {
+        $(input).change(function() {
+            var filename = $(this).val().replace(/.*\\/, "");
+            $(textblock).html(filename);
+        });
+    }
+    fileUpload("#cart__download-input", ".cart__download-text");
 });

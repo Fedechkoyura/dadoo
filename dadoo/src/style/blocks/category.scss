@@ -38,7 +38,8 @@
                 display: flex;
                 align-items: center;
                 font-family: $robotoR;
-                color: #6E0000;
+                font-weight: bold;
+                color: $red;
                 i {
                     font-size: 10px;
                     margin-left: 6px;
@@ -117,7 +118,7 @@
                     font-size: 0.8em;
                     color: #AFAFAF;
                     text-decoration: underline;
-                    transition: all .3s ease-in-out;
+                    transition: all .1s ease-in-out;
                     &:hover {
                         color: #000;
                     }
@@ -193,7 +194,7 @@
                             align-items: center;
                             text-align: center;
                             height: 35px;
-                            transition: all .3s ease-in-out;
+                            transition: all .1s ease-in-out;
                             padding: 0 20px;
                             color: #999;
                             &:hover {

@@ -126,6 +126,44 @@
   content: "\e900";
   color: #AF1111;
 }
+.icon-download:before {
+  content: "\e926";
+}
+.icon-feedback:before {
+  content: "\e925";
+}
+.icon-comment:before {
+  content: "\e923";
+}
+.icon-like:before {
+  content: "\e924";
+}
+.icon-star-full:before {
+  content: "\e921";
+  color: #ffd736;
+}
+.icon-star:before {
+  content: "\e922";
+  color: #ffd736;
+}
+.icon-for-youtube:before {
+  content: "\e91c";
+}
+.icon-temperature:before {
+  content: "\e91d";
+}
+.icon-copy:before {
+  content: "\e91e";
+}
+.icon-earth:before {
+  content: "\e91f";
+}
+.icon-grapes:before {
+  content: "\e920";
+}
+.icon-package::before {
+  content: "\e91b";
+}
 .icon-verified::before {
   content: "\e91a";
 }

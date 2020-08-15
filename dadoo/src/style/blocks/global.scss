@@ -165,7 +165,7 @@ a {
     outline: none;
     border: 1px solid transparent;
     letter-spacing: 1.2px;
-    transition: all .3s ease-in-out;
+    transition: all .1s ease-in-out;
     cursor: pointer;
 }
 @media (min-width:1900px) {
@@ -199,7 +199,7 @@ a {
         letter-spacing: 0.80px;
         transition: all .3s ease-in-out;
         &:focus {
-            border-color: #AFAFAF;
+            border-color: #e4e4e4;
         }
     }
     &__verified {
@@ -229,7 +229,7 @@ a {
             height: 40px;
             font-size: 0.9em;
             &:hover {
-                border-color: #AFAFAF;
+                border-color: #e4e4e4;
             }
         }
     }
@@ -289,10 +289,10 @@ a {
         }
     }
     @media (min-width:1024px) {
-        transition: all .3s ease-in-out;
+        transition: all .1s ease-in-out;
         &:hover {
-            background: $red;
-            color: #fff;
+            background: #e2e0e0;
+            /* color: #fff; */
         }
         &--recommended {
             width: 106px;
@@ -361,7 +361,6 @@ a {
         right: 0;
         bottom: -64px;
         background: linear-gradient(to top, rgba(255, 255, 255, .95) 70%, rgba(255, 255, 255, .1) 100%);
-        transition: all .3s ease-in-out;
     }
     &__content {
         font-size: 1.2em;

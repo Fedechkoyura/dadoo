@@ -40,7 +40,7 @@
         }
     }
     &__up {
-        border: 1px solid #BDBDBD;
+        border: 2px solid #EBEBEB;
         border-radius: 100%;
         display: flex;
         justify-content: center;
@@ -68,7 +68,7 @@
             >li {
                 max-height: 46px;
                 overflow: hidden;
-                transition: all .5s linear;
+                transition: all .2s linear;
                 border-bottom: 1px solid #F1F1F1;
                 padding: 0 23px 0 18px;
                 display: flex;
@@ -89,7 +89,7 @@
                     color: #666;
                     letter-spacing: 1.32px;
                     i {
-                        transition: all .5s linear;
+                        transition: all .2s linear;
                     }
                     &.open {
                         i {
@@ -147,11 +147,15 @@
                     margin-right: 0;
                 }
                 a {
-                    font-size: 23px;
+                    font-size: 27px;
                     color: $red;
+                    &.icon-instagram{
+                        /* font-size: 24px; */
+                    }
                     &.icon-youtube {
                         position: relative;
-                        font-size: 26px;
+                        top: 0.5px;
+                        font-size: 22px;
                     }
                 }
             }
@@ -190,15 +194,15 @@
             bottom: 0;
             margin: auto;
             cursor: pointer;
-            transition: all .3s ease-in-out;
+            transition: all .1s ease-in-out;
             background: rgba(189, 189, 189, 0.1);
             border-color: rgba(189, 189, 189, 0.2);
             border-width: 2px;
             i{
                 font-size: 15px;
                 left: 0.5px;
-                bottom: 0.1px;
-                transition: all .3s ease-in-out;
+                bottom: 0.5px;
+                transition: all .1s ease-in-out;
             }
             &:hover{
                 background: #BDBDBD;
@@ -214,10 +218,6 @@
                 margin: 0;
                 position: relative;
                 left: -1.5px;
-                transition: all .3s ease-in-out;
-                &:hover{
-                    color: #000;
-                }
             }
             span {
                 width: 120px;
@@ -254,7 +254,7 @@
                                 font-size: 0.9em;
                             }
                             a[href]:hover{
-                                    text-decoration: underline;
+                                color: $red;
                             }
                         }
                     }
@@ -280,7 +280,11 @@
                 li{
                     a{
                         color: rgba(136, 136, 136, 0.30);
-                        transition: all .3s ease-in-out;
+                        transition: all .1s ease-in-out;
+                        &.icon-youtube{
+                            font-size: 23px;
+                            top: 0.5px;   
+                        }
                         &:hover{
                             color: $red;
                         }
@@ -296,6 +300,7 @@
             }
         }
         &__cop{
+            padding-right: 20px;
             span{
                 margin: auto;
                 font-size: 0.9em;
@@ -333,7 +338,7 @@
         &__bottom{
             padding: 10px 0;
         }
-        &__dev,&__cards{
+        &__dev,&__bottom .footer__cards{
             width: 450px;
             margin-bottom: 0;
         }
@@ -349,7 +354,7 @@
             right: 0;
             transform: translateX(100%);
             i{
-                left: 0;
+                left: -0.5px;
             }
         }
     }
