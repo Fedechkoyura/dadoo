@@ -1227,12 +1227,17 @@
                     <input id="cart__download-input" class="cart__download-input" type="file" name="file" accept=".mp4,.mov" required>
                     <div class="cart__download-btn">
                         <i class="icon-download"></i>
-                        <div class="cart__download-text">Натисніть і виберіть файл з відео оглядом з вашого носія.</div>
+                        <div class="cart__download-text">Натисніть і виберіть файл з відео оглядом з вашого носія (до 1хв і до 200мб в mp4\mov форматі).</div>
                     </div>
                 </label>
-                <input type="submit" class="btn" name="" value="Надіслати">
+                <input onclick="videoSendSuccess()" type="submit" class="btn" name="" value="Надіслати">
                 <a target="_blank" href="#" class="cart__download-bonus">Читати про бонусну систему</a>
             </form>
+        </div>
+        <div class="cart__download-success">
+            <i class="icon-success"></i>
+            <p>Ваше відео надіслано успішно, очікуйте повідомлення на вашу пошту.</p>
+            <a class="popup__close" href="#">Повернутися на сайт</a>
         </div>
     </div>
     <footer class="footer">

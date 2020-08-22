@@ -402,6 +402,7 @@
                     font-size: 0.5em;
                     margin-left: 5px;
                     transition: all .3s ease-in-out;
+                    transform: translateY(-1.5px);
                 }
             }
             ul {
@@ -434,7 +435,7 @@
             &:hover {
                 span {
                     i {
-                        transform: rotate(-90deg);
+                        transform: translateY(-1.6px) rotate(-90deg);
                     }
                 }
                 ul {
@@ -460,7 +461,7 @@
             cursor: pointer;
             transition: all .3s ease-in-out;
             font-size: 13px;
-            top: 2px;
+            top: -1px;
             &:hover{
                 opacity: 0.5;
             }

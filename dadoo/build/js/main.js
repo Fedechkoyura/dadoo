@@ -18,6 +18,16 @@ function loginForgotSuccess() {
     $('.login__forgot-success').addClass('open');
 }
 
+function videoSendSuccess() {
+    event.preventDefault();
+    $('.cart__download-form').addClass('close');
+    $('.cart__download-success').addClass('open');
+    setTimeout(function() {
+        $('.cart__download-form').removeClass('close');
+        $('.cart__download-success').removeClass('open');
+    }, 4000);
+}
+
 $(document).ready(function() {
     let windowWidth = window.innerWidth;
     // Function after risize
@@ -56,6 +66,15 @@ $(document).ready(function() {
     $('.footer__up').click(function() {
         $('html, body').animate({ scrollTop: 0 }, 1000);
     });
+    function showBtnUp(){
+        if ($(this).scrollTop() > 200){
+            $('.footer__up').addClass("show");
+        } else {
+             $('.footer__up').removeClass("show");
+        }
+    }
+    showBtnUp();
+    $(window).scroll(showBtnUp);
     // DEMO
     $('.product__buy').click(function(event) {
         $(this).fadeOut(0);
