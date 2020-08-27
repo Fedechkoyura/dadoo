@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <title>Dadoo</title>
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    //= header.html
+    <main class="main main--page">
+        <div class="page page--account">
+            <!-- ОТОБРАЖАЕМ ЕСЛИ МОДЕРАТОР -->
+            <h1 class="page-title page-title--pk">МІЙ АККАУНТ <i>МОДЕРАТОРА</i></h1>
+            <!-- ОТОБРАЖАЕМ ЕСЛИ НЕ МОДЕРАТОР -->
+            <!-- <h1 class="page-title page-title--pk">Особистий кабінет</h1> -->
+            <div class="account">
+                <div class="account__moderator">
+                    <div class="account__moderator-pk">
+                        <div class="account__moderator-header">
+                            <div class="account__moderator-title">
+                                <h2>СТАТИСТИКА БАЗИ ДАННИХ</h2>
+                                <span>Всього в базі: 6</span>
+                            </div>
+                            <a data-link="account__filter" href="#" class="popup__open account__moderator-filter">
+                                <i class="icon-filter"></i>
+                            </a>
+                            <form action="" class="account__moderator-search">
+                                <input type="text" placeholder="Пошук по email або user ID">
+                                <input type="submit" class="btn" value="ШУКАТИ">
+                            </form>
+                            <div class="account__moderator-find">Знайдено користувачів: 6</div>
+                            <a href="#" class="account__moderator-export">
+                                <i class="icon-download"></i>
+                                <span>Экспорт бази в файл</span>
+                            </a>
+                        </div>
+                        <table cellspacing="0" width="100%">
+                            <tr class="account__moderator-table-titles">
+                                <th>Користувач</th>
+                                <th>Витрачено</th>
+                                <th>Бонусів</th>
+                                <th>E-mail</th>
+                                <th>Телефон</th>
+                                <th>Cтать</th>
+                                <th>Вік</th>
+                                <th>Зареєстрований</th>
+                                <th>Функції</th>
+                            </tr>
+                            <tr class="account__moderator-list">
+                                <td>Name</td>
+                                <td>999.999UAH</td>
+                                <td><input type="text" name="" value="150"></td>
+                                <td>user@mail.com</td>
+                                <td>+380931882311</td>
+                                <td>Ч</td>
+                                <td>30</td>
+                                <td>01.01.2020</td>
+                                <td class="account__moderator-item-function">
+                                    <a data-link="account__message" class="popup__open" href="#"><i class="popup__open icon-email"></i></a>
+                                    <!-- Если пользователь является МОДЕРАТОРОМ добавляем класс "active" в "icon-premium" ниже -->
+                                    <a href="#"><i class="icon-premium"></i></a>
+                                    <a href="#">
+                                        <!-- Отображаем если заблокирован -->
+                                        <!-- <i class="icon-padlock"></i> -->
+                                        <!-- Отображаем если НЕ заблокирован -->
+                                        <i class="icon-padlock_on"></i>
+                                    </a>
+                                    <a href="#"><i class="icon-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr class="account__moderator-list">
+                                <td>Name</td>
+                                <td>999.999UAH</td>
+                                <td><input type="text" name="" value="150"></td>
+                                <td>user@mail.com</td>
+                                <td>+380931882311</td>
+                                <td>Ч</td>
+                                <td>30</td>
+                                <td>01.01.2020</td>
+                                <td class="account__moderator-item-function">
+                                    <a data-link="account__message" class="popup__open" href="#"><i class="popup__open icon-email"></i></a>
+                                    <!-- Если пользователь является МОДЕРАТОРОМ добавляем класс "active" в "icon-premium" ниже -->
+                                    <a href="#"><i class="icon-premium"></i></a>
+                                    <a href="#">
+                                        <!-- Отображаем если заблокирован -->
+                                        <!-- <i class="icon-padlock"></i> -->
+                                        <!-- Отображаем если НЕ заблокирован -->
+                                        <i class="icon-padlock_on"></i>
+                                    </a>
+                                    <a href="#"><i class="icon-trash"></i></a>
+                                </td>
+                            </tr>
+                            <tr class="account__moderator-list">
+                                <td>Name</td>
+                                <td>999.999UAH</td>
+                                <td><input type="text" name="" value="150"></td>
+                                <td>user@mail.com</td>
+                                <td>+380931882311</td>
+                                <td>Ч</td>
+                                <td>30</td>
+                                <td>01.01.2020</td>
+                                <td class="account__moderator-item-function">
+                                    <a data-link="account__message" class="popup__open" href="#"><i class="popup__open icon-email"></i></a>
+                                    <!-- Если пользователь является МОДЕРАТОРОМ добавляем класс "active" в "icon-premium" ниже -->
+                                    <a href="#"><i class="icon-premium active"></i></a>
+                                    <a href="#">
+                                        <!-- Отображаем если заблокирован -->
+                                        <i class="icon-padlock"></i>
+                                        <!-- Отображаем если НЕ заблокирован -->
+                                        <!-- <i class="icon-padlock_on"></i> -->
+                                    </a>
+                                    <a href="#"><i class="icon-trash"></i></a>
+                                </td>
+                            </tr>
+                        </table>
+                        <div class="pagination">
+                            <div class="pagination__arrow pagination__prev pagination__disabled"><i class="icon-left-arrow"></i></div>
+                            <div class="pagination__list">
+                                <!-- Отображаем максимум 5 страниц -->
+                                <a class="current" href="#">1</a>
+                                <a href="#">2</a>
+                                <a href="#">3</a>
+                                <a href="#">4</a>
+                                <a href="#">5</a>
+                                <!-- Отображаем если последнюю страницу не видно -->
+                                <span>...</span>
+                            </div>
+                            <div class="pagination__arrow pagination__next"><i class="icon-left-arrow"></i></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="account__info">
+                    <!-- ОТОБРАЖАЕМ ЕСЛИ МОДЕРАТОР -->
+                    <h2 class="page-title page-title--mob page-title--account">Мій аккаунт <i>модератора</i></h2>
+                    <h2 class="page-title page-title--pk page-title--account">Аккаунт</h2>
+                    <!-- ОТОБРАЖАЕМ ЕСЛИ НЕ МОДЕРАТОР -->
+                    <!-- <h2 class="page-title page-title--account">Мій аккаунт</h2> -->
+                    <div class="account__moderator-mob">
+                        <i class="icon-premium"></i>
+                        <p>Функції особистого кабінету модератора, доступні тільки на компьютерах.</p>
+                    </div>
+                    <form action="">
+                        <div class="input">
+                            <label for="name-account">Ім'я</label>
+                            <input id="name-account" type="text" name="">
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <div class="input">
+                            <label for="email-account">E-mail</label>
+                            <input id="email-account" type="email" name="">
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <div class="input input--error">
+                            <label for="password-account">Існуючий пароль</label>
+                            <input id="password-account" type="password" name="">
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <div class="input">
+                            <label for="password-account-r">Новий пароль</label>
+                            <input id="password-account-r" type="password" name="">
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <input type="submit" class="btn" value="Зберегти">
+                    </form>
+                    <a href="account-info.html" class="account__link">Заповнити повну інформацію</a>
+                </div>
+                <div class="account__extra">
+                    <h2 class="page-title page-title--account">Інше</h2>
+                    <div class="account__bonus order__bonus-content">
+                        <div class="order__bonus-info">
+                            <div class="order__bonus-logo">DADOO
+                            </div>
+                            <span class="account__bonus-title">Бонусний рахуной</span>
+                            <span>На вашому рахунку:</span>
+                            <div class="order__bonus-points">100 БАЛЛІВ</div>
+                        </div>
+                        <a href="#" class="account__link">Читати про бонусну систему</a>
+                    </div>
+                    <div class="account__ref">
+                        <span class="account__ref-title">Реферальний лінк</span>
+                        <div class="account__ref-link">
+                            <span>
+                                http://dadoo.com/hsdh238
+                            </span>
+                            <div class="cart__link-success">Ссылка скопирована</div>
+                        </div>
+                        <a href="#" class="account__link">Читати про реферальну систему</a>
+                    </div>
+                    <div class="account__social">
+                        <p>Зв'язуйте свій обліковий запис з обліковими записами соцмереж і заходьте на сайт як користувач:</p>
+                        <div class="login__links">
+                            <!-- ЕСЛИ УЖЕ ПРИВЯЗАНО ТО МЕНЯЕТСЯ ТЕКСТ НА "Скасувати звя'зок" -->
+                            <a class="login__links-btn login__links-fb">
+                                <svg>
+                                    <use xlink:href="img/iconSprite.svg#facebook"></use>
+                                </svg>
+                                Звя'зати з соц. мережою
+                            </a>
+                            <a class="login__links-btn login__links-google">
+                                <svg>
+                                    <use xlink:href="img/iconSprite.svg#google"></use>
+                                </svg>
+                                Скасувати звя'зок
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <div id="account__filter" class="account__filter popup">
+        <div class="header__popup-top">
+            <span class="header__popup-title">ФІЛЬТР ПОШУКУ</span>
+            <div class="popup__close header__popup-close"><i class="icon-close"></i></div>
+        </div>
+        <div class="account__filter-form">
+            <div class="input">
+                <label for="">Витрачено:</label>
+            </div>
+            <div class="input">
+                <label for="">Бонусів:</label>
+            </div>
+            <div class="input">
+                <label for="">Вік:</label>
+            </div>
+            <div class="input">
+                <label for="">СТАТЬ:</label>
+                <div class="input__radio  input__radio--date account__filter-radio">
+                    <label>
+                        <input type="radio" name="filter-sex" value="Чоловіча">
+                        <i class="icon-verified"></i>
+                        <span>Чоловіча</span>
+                    </label>
+                    <label>
+                        <input type="radio" name="filter-sex" value="Жіноча">
+                        <i class="icon-verified"></i>
+                        <span>Жіноча</span>
+                    </label>
+                </div>
+            </div>
+            <input type="submit" class="btn" value="Шукати">
+        </div>
+    </div>
+    <div id="account__message" class="account__message popup">
+        <div class="header__popup-top">
+            <span class="header__popup-title">ВІДПРАВЛЕННЯ ПОВІДОМЛЕННЯ</span>
+            <div class="popup__close header__popup-close"><i class="icon-close"></i></div>
+        </div>
+        <div class="account__message">
+            <form action="" class="account__message-form">
+                <div class="input">
+                    <textarea value="" name="" placeholder="Почніть писати, тут..."></textarea>
+                    <span class="input__verified">Введіть текст повідомлення</span>
+                </div>
+                <input onclick="accountMessageSuccess()" type="submit" class="btn" value="Надіслати">
+            </form>
+            <div class="account__message-success">
+                <i class="icon-success"></i>
+                <p>Повідомлення надіслано успішно</p>
+            </div>
+        </div>
+    </div>
+    //= footer.html
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.2/dist/jquery.formstyler.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.5.10/clipboard.min.js"></script>
+    <script>
+    var cartLink = document.querySelector('.account__ref-link');
+    var url = cartLink.querySelector('span').textContent;
+    new Clipboard('.account__ref-link', { text: function() { return url; } });
+    cartLink.addEventListener('click', function() {
+        var myThis = this;
+        myThis.classList.add('copy');
+        setTimeout(function() {
+            myThis.classList.remove('copy');
+        }, 2000);
+
+    })
+    </script>
+</body>
+
+</html>

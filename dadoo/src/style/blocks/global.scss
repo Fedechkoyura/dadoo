@@ -70,7 +70,8 @@ a {
 }
 .overlay,
 .overlay2,
-.overlay--how-old {
+.overlay--how-old,
+.overlay--message {
     display: none;
     @media (min-width: 1024px) {
         display: block;
@@ -91,7 +92,8 @@ a {
     }
 }
 .overlay2,
-.overlay--how-old {
+.overlay--how-old,
+.overlay--message {
     z-index: 20;
     background: rgba(255, 255, 255, 0.9);
 }
@@ -122,6 +124,7 @@ a {
         height: calc(100% - 51.5px);
     }
     @media (min-width:1024px) {
+        z-index: 21;
         height: auto;
         border-radius: 2px;
         transform: none !important;
@@ -186,14 +189,15 @@ a {
         color: #999;
         margin-bottom: 7px;
         text-transform: uppercase;
-        &.required{
-            &::after{
+        &.required {
+            &::after {
                 content: '*';
             }
         }
     }
     >input,
     >select,
+    textarea,
     .jq-selectbox__select-text {
         display: flex;
         align-items: center;
@@ -207,14 +211,22 @@ a {
         color: #484848;
         letter-spacing: 0.80px;
         transition: all .3s ease-in-out;
+        &::placeholder{
+            color: #999999;
+        }
         &:focus {
             border-color: #e4e4e4;
         }
     }
-    select{
+    textarea{
+        padding-top: 18px;
+        padding-bottom: 18px;
+        resize: none;
+    }
+    select {
         display: none;
     }
-    option{
+    option {
         height: 30px;
         padding: 10px;
     }
@@ -228,8 +240,8 @@ a {
         visibility: hidden;
         transition: all .3s ease-in-out;
     }
-    &--radio{
-        .input__verified{
+    &--radio {
+        .input__verified {
             left: 0;
         }
     }
@@ -248,10 +260,10 @@ a {
             display: flex;
             align-items: center;
         }
-        input{
+        input {
             display: none;
         }
-        i{
+        i {
             width: 19px;
             height: 19px;
             border-radius: 2px;
@@ -264,23 +276,23 @@ a {
             padding-left: 1px;
             padding-top: 1px;
             margin-right: 11px;
-            &::before{
+            &::before {
                 font-size: 8px;
                 color: #fff;
             }
         }
-        input:checked + i{
+        input:checked+i {
             background: #AFAFAF;
-        } 
-        span{
+        }
+        span {
             font-size: 1.27em;
             font-family: $robotoL;
         }
-        &--date{
-            i{
+        &--date {
+            i {
                 border-color: #FFCFCF;
             }
-            input:checked + i{
+            input:checked+i {
                 border-color: $red;
                 background: $red;
             }
@@ -291,35 +303,36 @@ a {
             font-size: 0.9em;
         }
         >input,
-        >select {
+        textarea,
+        >select,
+        .jq-selectbox__select-text {
             height: 40px;
             font-size: 0.9em;
             &:hover {
                 border-color: #e4e4e4;
             }
         }
-        &__radio{
+        &__radio {
             margin-top: 3px;
             margin-bottom: 5px;
-            label{
+            label {
                 cursor: pointer;
-                &:hover{
-                    span{
+                &:hover {
+                    span {
                         opacity: 0.8;
                     }
                 }
             }
-            span{
+            span {
                 font-size: 0.9em;
             }
-            i{
+            i {
                 width: 15px;
                 height: 14px;
                 margin-right: 9px;
                 padding-bottom: 1px;
-                *
-                &::before{
-                    font-size: 6px;   
+                * &::before {
+                    font-size: 6px;
                 }
             }
         }
@@ -431,6 +444,10 @@ a {
     font-size: 1.3em;
     color: #484848;
     border-bottom: 1px solid #F1F1F1;
+    i {
+        font-style: normal;
+        color: $red;
+    }
     &--category {
         padding-bottom: 10px;
         border-bottom: none;
@@ -438,12 +455,32 @@ a {
     &--blog {
         border-bottom: none;
     }
+    &--pk {
+        display: none;
+    }
+    @media (min-width:1024px) {
+        &--pk {
+            display: block;
+        }
+        &--mob{
+            display: none;
+        }
+        &--account {
+            font-size: 1em;
+            font-family: $montM;
+        }
+    }
     @media (min-width:1280px) {
         padding-top: 48px;
         padding-bottom: 45px;
         font-size: 1.5em;
         &--category {
             padding-bottom: 20px;
+        }
+        &--account {
+            padding-top: 25px;
+            padding-bottom: 27px;
+            font-size: 1.1em;
         }
     }
 }
@@ -617,6 +654,78 @@ a {
         }
         &--order {
             padding: 0;
+        }
+        &--account {
+            padding: 0;
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 174px;
+    border-bottom: 1px solid #F1F1F1;
+    padding-bottom: 100px;
+    &__arrow {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: $red;
+        width: 159px;
+        height: 40px;
+        border: 1px solid $red;
+        transition: all .1s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            background: none;
+            i {
+                color: $red;
+            }
+        }
+        i {
+            font-size: 8px;
+            position: relative;
+            color: #FFF;
+        }
+        &.pagination__disabled {
+            pointer-events: none;
+            background: none;
+            border-color: #FFCFCF;
+            i {
+                color: $red;
+            }
+        }
+    }
+    &__next {
+        padding-left: 5px;
+    }
+    &__prev {
+        padding-right: 5px;
+        i {
+            transform: rotate(-180deg);
+        }
+    }
+    &__list {
+        margin: 0 20px;
+        a,
+        span {
+            color: #AFAFAF;
+        }
+        a {
+            margin-right: 7px;
+            font-family: $mullerM;
+            transition: all .1s ease-in-out;
+            &:hover {
+                color: $red;
+            }
+            &:last-of-type {
+                margin-right: 0;
+            }
+            &.current {
+                color: $red;
+            }
         }
     }
 }

@@ -23,7 +23,7 @@
             <a href="/" class="header__logo">Dadoo</a>
             <div class="header__icons">
                 <!-- Меняется класс "hidden" в зависимости зашел ли пользователь в свой аккаунт или убирается с DOM дерева -->
-                <div data-link="header__account" class="popup__open2 header__icons-link hidden">
+                <div data-link="header__account" class="popup__open2 header__icons-link">
                     <i class="icon-user"></i>
                     <!-- ВАЖНО! Блок "#header__account" должен убираться с DOM дерева если пользователь НЕ залогинен -->
                     <div id="header__account" class="popup header__account">
@@ -39,14 +39,14 @@
                             <span class="header__popup-desc">Вітаємо, <i>Віталій!</i></span>
                         </div>
                         <ul class="header__account-list">
-                            <li><a href="#">Мій аккаунт</a></li>
-                            <li><a href="#">Мої замовлення</a></li>
-                            <li><a href="#">Мої данні</a></li>
+                            <li><a href="account.html">Мій аккаунт</a></li>
+                            <li><a href="account-order.html">Мої замовлення</a></li>
+                            <li><a href="account-info.html">Мої данні</a></li>
                             <li><a href="#">Вихід</a></li>
                         </ul>
                     </div>
                 </div>
-                <a data-link="login" class="popup__open header__icons-link"><i class="icon-user"></i></a>
+                <a data-link="login" class="popup__open header__icons-link hidden"><i class="icon-user"></i></a>
                 <!--  -->
                 <a href="#" class="header__icons-link">
                     <!-- Меняется в зависимости есть ли товары в избранном -->
@@ -422,25 +422,6 @@
                 </li>
             </ul>
         </div>
-        <!--  -->
-        <!-- <div id="header__message" class="popup header__message">
-            <div class="header__popup-top">
-                <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ</span>
-                <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
-            </div>
-            <div class="header__message-content">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
-            </div>
-        </div>
-        <div id="header__message" class="popup header__message">
-            <div class="header__popup-top">
-                <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ</span>
-                <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
-            </div>
-            <div class="header__message-content">
-                2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
-            </div>
-        </div> -->
     </header>
     <main class="main main--page">
         <div class="page page--order">
@@ -568,9 +549,9 @@
                 </div>
                 <div class="popular popular--bag">
                     <!-- Показываем если в корзине ЕСТЬ товары -->
-                    <h3 class="popular__title">Рекомендуємо до перегляду</h3>
+                    <!-- <h3 class="popular__title">Рекомендуємо до перегляду</h3> -->
                     <!-- Показываем если в коризне ПУСТО -->
-                    <!-- <h3 class="popular__title">ГАРНО поєднується</h3> -->
+                    <h3 class="popular__title">ГАРНО поєднується</h3>
                     <div class="popular__list">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide product product--popular">
@@ -1112,14 +1093,42 @@
             </div>
         </div>
     </div>
-    <!--  -->
     <div id="lang-popup" class="popup popup--no-header lang-popup">
         <ul class="header__account-list lang-popup__list">
             <li><a href="#">Українська мова</a></li>
             <li><a href="#">Російська мова</a></li>
         </ul>
     </div>
-    <!-- <div id="how-old" class="popup how-old">
+    <div id="header__message3" class="popup header__message open">
+        <div class="header__popup-top">
+            <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ <i>( 3 / 3 )</i></span>
+            <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
+        </div>
+        <div class="header__message-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
+        </div>
+    </div>
+    <div id="header__message2" class="popup header__message open">
+        <div class="header__popup-top">
+            <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ <i>( 2 / 3 )</i></span>
+            <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
+        </div>
+        <div class="header__message-content">
+            2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
+        </div>
+    </div>
+    <div id="header__message1" class="popup header__message open">
+        <div class="header__popup-top">
+            <span class="header__popup-title">НОВЕ ПОВІДОМЛЕННЯ <i>( 1 / 3 )</i></span>
+            <div class="header__message-close header__popup-close"><i class="icon-close"></i></div>
+        </div>
+        <div class="header__message-content">
+            2Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a ultricies quam, vel vestibulum turpis. Sed iaculis feugiat aliquet. Suspendisse a felis venenatis, porttitor arcu a, commodo quam. Fusce nec tempus felis, et sodales sem. Vestibulum semper eu enim non rutrum. In dapibus nisi vel condimentum ultrices. Vestibulum dignissim varius lacus a malesuada.
+        </div>
+    </div>
+    <div class="overlay--message open"></div>
+    
+    <div id="how-old" class="popup how-old">
         <div class="header__nav-top">
             <div class="popup__close header__nav-close">
                 <i class="icon-close"></i>
@@ -1146,11 +1155,10 @@
                 <a onclick="window.history.back()" class="btn how-old__back" href="#">Назад</a>
             </div>
         </div>
-    </div> -->
-    
+    </div>
     <div class="overlay"></div>
     <div class="overlay2"></div>
-    <!-- <div class="overlay--how-old open"></div> -->
+    <div class="overlay--how-old open"></div>
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/swiper.js"></script>

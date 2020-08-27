@@ -120,6 +120,9 @@
             font-family: $montB;
             text-transform: uppercase;
             color: #484848;
+            i{
+                font-style: normal;
+            }
         }
         &-desc {
             font-size: 0.9em;
@@ -619,10 +622,11 @@
             left: 0;
             right: 0;
             margin: auto;
-            &.popup{
+            z-index: 21;
+            /* &.popup{
                 opacity: 1;
                 visibility: visible;
-            }
+            } */
             &-content{
                 padding: 72px 61px 107px;
             }

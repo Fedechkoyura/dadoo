@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+    <meta property="og:site_name" content="">
+    <title>Dadoo</title>
+    <!-- Custom styles for this template -->
+    <link href="css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    //= header.html
+    <main class="main main--page">
+        <div class="page page--account">
+            <h1 class="page-title page-title--pk">Особистий кабінет</h1>
+            <div class="account">
+                <div class="account__info-all">
+                    <h2 class="page-title page-title--account">Повна інформацію про аккаунт</h2>
+                    <form action="">
+                        <div class="input">
+                            <label for="day-account">Дата народження</label>
+                            <div class="order__date-list">
+                                <div class="input order__date-item">
+                                    <select id="day-account" name="">
+                                        <option selected hidden disabled>День</option>
+                                        <option value="monday">Понеділок</option>
+                                        <option value="tuesday">Вівторок</option>
+                                        <option value="wendsday">Середа</option>
+                                        <option value="thursday">Четверг</option>
+                                        <option value="friday">Пятниця</option>
+                                        <option value="saturday">Субота</option>
+                                        <option value="sunday">Неділя</option>
+                                    </select>
+                                    <span class="input__verified">Введіть данні вірно</span>
+                                </div>
+                                <div class="input order__date-item">
+                                    <select id="month-account" name="" required>
+                                        <option selected hidden disabled>Місяць</option>
+                                        <option value="1">Січень</option>
+                                        <option value="2">Лютий</option>
+                                        <option value="3">Березень</option>
+                                        <option value="4">Квітень</option>
+                                        <option value="5">Травень</option>
+                                        <option value="6">Черевень</option>
+                                        <option value="7">Липень</option>
+                                        <option value="8">Серпень</option>
+                                        <option value="9">Вересень</option>
+                                        <option value="10">Жовтень</option>
+                                        <option value="11">Листопад</option>
+                                        <option value="12">Грудень</option>
+                                    </select>
+                                    <span class="input__verified">Введіть данні вірно</span>
+                                </div>
+                                <div class="input order__date-item">
+                                    <select id="year-account" name="" required>
+                                        <option selected hidden disabled>Рік</option>
+                                        <option value="1990">1990</option>
+                                        <option value="1991">1991</option>
+                                        <option value="1992">1992</option>
+                                        <option value="1993">1993</option>
+                                    </select>
+                                    <span class="input__verified">Введіть данні вірно</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <label for="sex-account">Стать</label>
+                            <select id="sex-account" name="">
+                                <option selected hidden disabled>Обрати</option>
+                                <option value="man">Чоловіча</option>
+                                <option value="woman">Жіноча</option>
+                            </select>
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <div class="input">
+                            <label for="city-account">МІСТО</label>
+                            <select id="city-account" name="">
+                                <option selected hidden disabled>Обрати</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                                <option value="kiev">Київ</option>
+                                <option value="lviv">Львів</option>
+                            </select>
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <div class="input">
+                            <label class="required" for="adress-account">АДРЕСА</label>
+                            <input id="adress-account" type="text" name="" value="Хрещатик">
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <div class="input">
+                            <label for="flat-account">КВАРТИРА</label>
+                            <input id="flat-account" type="text" name="">
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <div class="input">
+                            <label for="floor-account">Поверх</label>
+                            <input id="floor-account" type="text" name="">
+                            <span class="input__verified">Введіть данні вірно</span>
+                        </div>
+                        <input type="submit" class="btn" value="Зберегти">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    //= footer.html
+    <script src="js/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-form-styler@2.0.2/dist/jquery.formstyler.js"></script>
+</body>
+
+</html>

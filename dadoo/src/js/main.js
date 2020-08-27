@@ -28,6 +28,21 @@ function videoSendSuccess() {
     }, 4000);
 }
 
+function accountMessageSuccess() {
+    event.preventDefault();
+    let valueTextareaa = $('.account__message-form textarea').val();
+    if (valueTextareaa.length < 1) {
+        $('.account__message-form .input').addClass('input--error');
+    } else {
+        $('.account__message-success').addClass('open');
+        setTimeout(function() {
+            $('.account__message-form textarea').val('');
+            $('.account__message-success').removeClass('open');
+            $('.account__message-form .input').removeClass('input--error');
+        }, 3000);
+    }
+}
+
 $(document).ready(function() {
     let windowWidth = window.innerWidth;
     // Function after risize
@@ -66,11 +81,12 @@ $(document).ready(function() {
     $('.footer__up').click(function() {
         $('html, body').animate({ scrollTop: 0 }, 1000);
     });
-    function showBtnUp(){
-        if ($(this).scrollTop() > 200){
+
+    function showBtnUp() {
+        if ($(this).scrollTop() > 200) {
             $('.footer__up').addClass("show");
         } else {
-             $('.footer__up').removeClass("show");
+            $('.footer__up').removeClass("show");
         }
     }
     showBtnUp();
@@ -97,6 +113,19 @@ $(document).ready(function() {
     }
     $('.popup__close').click(popupClose);
     $('.overlay2').click(popupClose);
+
+    // Account messages
+    let allMessages = document.querySelectorAll('.header__message');
+    let overlayMessage = document.querySelector('.overlay--message');
+    for (var i = 1; i <= allMessages.length; i++) {
+        if (i === allMessages.length) {
+            let lastCloseBtn = allMessages[0].querySelector('.header__popup-close');
+            lastCloseBtn.addEventListener('click', function() {
+                overlayMessage.classList.remove('open');
+            })
+        }
+    }
+    // 
 
     $('.login__close-this').click(function(event) {
         $(this).parent().parent().removeClass('open');
@@ -364,4 +393,10 @@ $(document).ready(function() {
         });
     }
     fileUpload("#cart__download-input", ".cart__download-text");
+
+    if ($('select').length) {
+        setTimeout(function() {
+            $('select').styler();
+        }, 100)
+    }
 });
