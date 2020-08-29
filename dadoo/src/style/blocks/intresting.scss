@@ -53,7 +53,7 @@
 }
 @media (min-width:1280px){
 	.intresting{
-		margin-left: 10.2%;
+		margin-left: calc(10.2% - 15px);
 		padding-left: 22px;
 		border-left: 1px solid #F1F1F1;
 		&__title{

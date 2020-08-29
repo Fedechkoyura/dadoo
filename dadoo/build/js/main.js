@@ -399,4 +399,10 @@ $(document).ready(function() {
             $('select').styler();
         }, 100)
     }
+
+    // Questions NAVIGATION
+    $('.questions__title').click(function(event) {
+        $(this).find('i').toggleClass('icon-minus');
+        $(this).siblings('.questions__desc').slideToggle(300);
+    });
 });
